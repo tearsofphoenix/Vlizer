@@ -7,7 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VZGameViewController">
             <connections>
-                <outlet property="numberLabel" destination="99N-01-wBu" id="ayb-dV-dyX"/>
+                <outlet property="numberView" destination="Kdc-7l-QeG" id="wT2-L5-90e"/>
+                <outlet property="preNumberLabel" destination="Nm2-7I-fBi" id="KFj-1Y-OjW"/>
                 <outlet property="progressView" destination="KYO-I5-uxB" id="lAi-6n-09J"/>
                 <outlet property="skview" destination="lMG-jT-Abb" id="Gou-7E-Y3u"/>
                 <outlet property="tutorView" destination="faT-aN-iLA" id="fY1-AJ-oBd"/>
@@ -84,6 +85,31 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </view>
+                <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kdc-7l-QeG" userLabel="Number View">
+                    <rect key="frame" x="0.0" y="50" width="320" height="469"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dialog_number.png" translatesAutoresizingMaskIntoConstraints="NO" id="qyX-Y0-h2q">
+                            <rect key="frame" x="5" y="136" width="310" height="232"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nm2-7I-fBi">
+                            <rect key="frame" x="100" y="191" width="124" height="124"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="54"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is your magic number for this level:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="168" translatesAutoresizingMaskIntoConstraints="NO" id="TBf-Cd-Uoe">
+                            <rect key="frame" x="78" y="51" width="168" height="67"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -91,6 +117,7 @@
     </objects>
     <resources>
         <image name="background.png" width="320" height="568"/>
+        <image name="dialog_number.png" width="310" height="232"/>
         <image name="dialog_tutorial1.png" width="310" height="232"/>
         <image name="dialog_tutorial2.png" width="310" height="232"/>
     </resources>

@@ -11,6 +11,7 @@
 		60027B4818D89920009FCD4A /* UIAlertView+BlockSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 60027B4718D89920009FCD4A /* UIAlertView+BlockSupport.m */; };
 		60027B5518DB036B009FCD4A /* dialog_tutorial1.png in Resources */ = {isa = PBXBuildFile; fileRef = 60027B5318DB036B009FCD4A /* dialog_tutorial1.png */; };
 		60027B5618DB036B009FCD4A /* dialog_tutorial2.png in Resources */ = {isa = PBXBuildFile; fileRef = 60027B5418DB036B009FCD4A /* dialog_tutorial2.png */; };
+		60027B5818DB0669009FCD4A /* dialog_number.png in Resources */ = {isa = PBXBuildFile; fileRef = 60027B5718DB0669009FCD4A /* dialog_number.png */; };
 		60EFDC2E18D0A675005F13A9 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EFDC2B18D0A675005F13A9 /* IAPHelper.m */; };
 		60EFDC2F18D0A675005F13A9 /* RageIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EFDC2D18D0A675005F13A9 /* RageIAPHelper.m */; };
 		9210218318D17D180071DE17 /* QGMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9210218218D17D180071DE17 /* QGMainViewController.m */; };
@@ -74,6 +75,7 @@
 		60027B5218DB0008009FCD4A /* zlizer.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = zlizer.js; sourceTree = "<group>"; };
 		60027B5318DB036B009FCD4A /* dialog_tutorial1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dialog_tutorial1.png; sourceTree = "<group>"; };
 		60027B5418DB036B009FCD4A /* dialog_tutorial2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dialog_tutorial2.png; sourceTree = "<group>"; };
+		60027B5718DB0669009FCD4A /* dialog_number.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dialog_number.png; sourceTree = "<group>"; };
 		60EFDC2A18D0A675005F13A9 /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
 		60EFDC2B18D0A675005F13A9 /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
 		60EFDC2C18D0A675005F13A9 /* RageIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RageIAPHelper.h; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 		60027B4A18DB0008009FCD4A /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				60027B5718DB0669009FCD4A /* dialog_number.png */,
 				60027B5318DB036B009FCD4A /* dialog_tutorial1.png */,
 				60027B5418DB036B009FCD4A /* dialog_tutorial2.png */,
 				60027B4B18DB0008009FCD4A /* bubble_back.png */,
@@ -421,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92273E6C18CFFB6D00EC2E25 /* key.png in Resources */,
+				60027B5818DB0669009FCD4A /* dialog_number.png in Resources */,
 				9249B66018DAD030000040F6 /* QGMainViewController.xib in Resources */,
 				92273E6B18CFFB6D00EC2E25 /* door.png in Resources */,
 				9249B64118DAC759000040F6 /* background.png in Resources */,

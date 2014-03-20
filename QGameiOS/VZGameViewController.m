@@ -17,6 +17,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *tutorView;
 
+@property (weak, nonatomic) IBOutlet UILabel *preNumberLabel;
+@property (weak, nonatomic) IBOutlet UIView *numberView;
 @end
 
 @implementation VZGameViewController
@@ -33,7 +35,27 @@
 
 - (void)_showNumberView
 {
-    
+    [_preNumberLabel setText: @"6"];
+    [UIView animateWithDuration: 0.5
+                     animations: (^
+                                  {
+                                      [_numberView setAlpha: 1];
+                                  })
+                     completion: (^(BOOL finished)
+                                  {
+                                      [UIView animateWithDuration: 0.5
+                                                            delay: 2.0
+                                                          options: 0
+                                                       animations: (^
+                                                                    {
+                                                                        [_numberView setAlpha: 0];
+                                                                    })
+                                                       completion: (^(BOOL finished)
+                                                                    {
+                                                                        //start game
+                                                                        [self _startGame];
+                                                                    })];
+                                  })];
 }
 
 - (void)viewDidLoad
@@ -41,7 +63,7 @@
     [super viewDidLoad];
     
     [_tutorView setTransform: CGAffineTransformMakeTranslation(0, -768)];
-
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *record = [defaults stringForKey: VZHasShowTutor];
     if ([record boolValue])
@@ -74,6 +96,11 @@
                                                                         })];
                                       })];
     }
+}
+
+- (void)_startGame
+{
+    
 }
 
 - (IBAction)handleBackEvent:(id)sender
