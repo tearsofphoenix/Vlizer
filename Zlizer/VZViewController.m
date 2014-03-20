@@ -8,7 +8,9 @@
 
 #import "VZViewController.h"
 
-@interface VZViewController ()
+@interface VZViewController ()<UIWebViewDelegate>
+
+@property (nonatomic, strong) UIWebView *webView;
 
 @end
 
@@ -17,13 +19,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    NSURL *url = [[NSBundle mainBundle] URLForResource: @"Zlizer"
+                                         withExtension: @"html"
+                                          subdirectory: @"web"];
+    
+    _webView = [[UIWebView alloc] initWithFrame: [[self view] bounds]];
+//    [_webView setDelegate: self];
+    [_webView loadRequest: [NSURLRequest requestWithURL: url]];
+    
+    [[self view] addSubview: _webView];
 }
 
-- (void)didReceiveMemoryWarning
+- (BOOL)webView: (UIWebView *)webView
+shouldStartLoadWithRequest: (NSURLRequest *)request
+ navigationType: (UIWebViewNavigationType)navigationType
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return YES;
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 @end

@@ -22,6 +22,7 @@
 		9249B62518DA9859000040F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9249B60418DA9859000040F6 /* UIKit.framework */; };
 		9249B62D18DA9859000040F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9249B62B18DA9859000040F6 /* InfoPlist.strings */; };
 		9249B62F18DA9859000040F6 /* ZlizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9249B62E18DA9859000040F6 /* ZlizerTests.m */; };
+		9249B63C18DA9BB6000040F6 /* web in Resources */ = {isa = PBXBuildFile; fileRef = 9249B63B18DA9BB6000040F6 /* web */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		9249B62A18DA9859000040F6 /* ZlizerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZlizerTests-Info.plist"; sourceTree = "<group>"; };
 		9249B62C18DA9859000040F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9249B62E18DA9859000040F6 /* ZlizerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZlizerTests.m; sourceTree = "<group>"; };
+		9249B63B18DA9BB6000040F6 /* web */ = {isa = PBXFileReference; lastKnownFileType = folder; path = web; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		9249B60618DA9859000040F6 /* Zlizer */ = {
 			isa = PBXGroup;
 			children = (
+				9249B63B18DA9BB6000040F6 /* web */,
 				9249B60F18DA9859000040F6 /* VZAppDelegate.h */,
 				9249B61018DA9859000040F6 /* VZAppDelegate.m */,
 				9249B61218DA9859000040F6 /* Main_iPhone.storyboard */,
@@ -232,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9249B63C18DA9BB6000040F6 /* web in Resources */,
 				9249B61718DA9859000040F6 /* Main_iPad.storyboard in Resources */,
 				9249B61C18DA9859000040F6 /* Images.xcassets in Resources */,
 				9249B61418DA9859000040F6 /* Main_iPhone.storyboard in Resources */,
@@ -394,6 +398,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Zlizer/Zlizer-Prefix.pch";
 				INFOPLIST_FILE = "Zlizer/Zlizer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -407,6 +412,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Zlizer/Zlizer-Prefix.pch";
 				INFOPLIST_FILE = "Zlizer/Zlizer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
