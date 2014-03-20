@@ -13,14 +13,7 @@
 #import "QGScene+BuildLevel.h"
 
 #import "QGDataService.h"
-
-enum
-{
-    VZGroundMask = 0x1 < 1,
-    VZBubbleMask = 0x1 < 2,
-};
-
-typedef uint32_t VZConcatMask;
+#import "VZBubbleNode.h"
 
 @interface QGScene ()<SKPhysicsContactDelegate>
 
@@ -61,36 +54,12 @@ typedef uint32_t VZConcatMask;
         
         for (NSInteger iLooper = 0; iLooper < 10; ++iLooper)
         {
-            NSInteger speed = rand() % 7 + 10;
-            
-            SKSpriteNode *node = [SKSpriteNode spriteNodeWithImageNamed: @"bubble_back"];
-            [node setSize: CGSizeMake(30, 30)];
-            SKPhysicsBody *body = [SKPhysicsBody bodyWithCircleOfRadius: 15];
-            [body setAffectedByGravity: YES];
-            [body setUsesPreciseCollisionDetection: YES];
-            [body setVelocity: CGVectorMake(0, -speed)];
-            [body setMass: 0.1];
-            [body setCategoryBitMask: VZBubbleMask];
-            [body setContactTestBitMask: VZGroundMask];
-            [body setCollisionBitMask: VZGroundMask];
-            
-            [node setPhysicsBody: body];
-            
-            [node setPosition: CGPointMake(rand() % (NSInteger)size.width, size.height)];
-            
-            SKLabelNode *labelNode = [SKLabelNode labelNodeWithFontNamed: @"HelveticaNeue-Light"];
-            [labelNode setVerticalAlignmentMode: SKLabelVerticalAlignmentModeCenter];
-            [labelNode setHorizontalAlignmentMode: SKLabelHorizontalAlignmentModeCenter];
-            
-            NSInteger number = rand() % 7 + 1;
-            [labelNode setText: [NSString stringWithFormat: @"%d", number]];
-            [node addChild: labelNode];
+            VZBubbleNode *node = [[VZBubbleNode alloc] initWithSize: size];
             
             [_bubbles addObject: node];
             
             [self addChild: node];
         }
-        
     }
     
     return self;
@@ -119,6 +88,10 @@ typedef uint32_t VZConcatMask;
     if ([bodyA categoryBitMask] == VZGroundMask && [bodyB categoryBitMask] == VZBubbleMask)
     {
         NSLog(@"%@ %@", [bodyA node], [bodyB node]);
+        VZBubbleNode *bubbleNode = (VZBubbleNode *)[bodyB node];
+        
+        [bodyB setVelocity: CGVectorMake(0, 10)];
+        [bubbleNode showBreakAnimation];
     }
 }
 

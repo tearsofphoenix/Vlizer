@@ -14,6 +14,7 @@
 		60027B5818DB0669009FCD4A /* dialog_number.png in Resources */ = {isa = PBXBuildFile; fileRef = 60027B5718DB0669009FCD4A /* dialog_number.png */; };
 		60027B5918DB0EB1009FCD4A /* bubble_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 60027B4B18DB0008009FCD4A /* bubble_back.png */; };
 		60027B5B18DB2972009FCD4A /* floor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60027B5A18DB2972009FCD4A /* floor@2x.png */; };
+		60027B5E18DB3C4C009FCD4A /* VZBubbleNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 60027B5D18DB3C4C009FCD4A /* VZBubbleNode.m */; };
 		60EFDC2E18D0A675005F13A9 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EFDC2B18D0A675005F13A9 /* IAPHelper.m */; };
 		60EFDC2F18D0A675005F13A9 /* RageIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EFDC2D18D0A675005F13A9 /* RageIAPHelper.m */; };
 		9210218318D17D180071DE17 /* QGMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9210218218D17D180071DE17 /* QGMainViewController.m */; };
@@ -79,6 +80,8 @@
 		60027B5418DB036B009FCD4A /* dialog_tutorial2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dialog_tutorial2.png; sourceTree = "<group>"; };
 		60027B5718DB0669009FCD4A /* dialog_number.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dialog_number.png; sourceTree = "<group>"; };
 		60027B5A18DB2972009FCD4A /* floor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "floor@2x.png"; sourceTree = "<group>"; };
+		60027B5C18DB3C4C009FCD4A /* VZBubbleNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZBubbleNode.h; sourceTree = "<group>"; };
+		60027B5D18DB3C4C009FCD4A /* VZBubbleNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZBubbleNode.m; sourceTree = "<group>"; };
 		60EFDC2A18D0A675005F13A9 /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
 		60EFDC2B18D0A675005F13A9 /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
 		60EFDC2C18D0A675005F13A9 /* RageIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RageIAPHelper.h; sourceTree = "<group>"; };
@@ -254,6 +257,8 @@
 				9276282218D1A3F80054CE64 /* QGAlertView.m */,
 				92F52B8F18C85886008BCA12 /* QGScene.h */,
 				92F52B9018C85886008BCA12 /* QGScene.m */,
+				60027B5C18DB3C4C009FCD4A /* VZBubbleNode.h */,
+				60027B5D18DB3C4C009FCD4A /* VZBubbleNode.m */,
 				9276281B18D19AAE0054CE64 /* QGScene+BuildLevel.h */,
 				9276281C18D19AAE0054CE64 /* QGScene+BuildLevel.m */,
 				60027B3E18D87B62009FCD4A /* QGProductsView.h */,
@@ -481,6 +486,7 @@
 				60027B4018D87B62009FCD4A /* QGProductsView.m in Sources */,
 				92A8B38418D93FD300D28DDC /* MFRunLoopOperation.m in Sources */,
 				9252DD4018D2B11C00C8FDAF /* QGDataService.m in Sources */,
+				60027B5E18DB3C4C009FCD4A /* VZBubbleNode.m in Sources */,
 				92A8B38818D93FD300D28DDC /* Reachability.m in Sources */,
 				92A8B38718D93FD300D28DDC /* NSString+CMBExtensions.m in Sources */,
 				92A8B38318D93FD300D28DDC /* MFNetworkOperation.m in Sources */,
