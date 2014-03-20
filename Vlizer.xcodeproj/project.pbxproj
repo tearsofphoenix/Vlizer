@@ -1,0 +1,350 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9249B60118DA9859000040F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9249B60018DA9859000040F6 /* Foundation.framework */; };
+		9249B60318DA9859000040F6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9249B60218DA9859000040F6 /* CoreGraphics.framework */; };
+		9249B60518DA9859000040F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9249B60418DA9859000040F6 /* UIKit.framework */; };
+		9249B65518DACDA2000040F6 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9249B64718DACDA2000040F6 /* Main_iPad.storyboard */; };
+		9249B65618DACDA2000040F6 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9249B64918DACDA2000040F6 /* Main_iPhone.storyboard */; };
+		9249B65718DACDA2000040F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9249B64C18DACDA2000040F6 /* InfoPlist.strings */; };
+		9249B65818DACDA2000040F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9249B64E18DACDA2000040F6 /* Images.xcassets */; };
+		9249B65918DACDA2000040F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9249B64F18DACDA2000040F6 /* main.m */; };
+		9249B65A18DACDA2000040F6 /* VZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9249B65218DACDA2000040F6 /* VZAppDelegate.m */; };
+		9249B65B18DACDA2000040F6 /* VZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9249B65418DACDA2000040F6 /* VZViewController.m */; };
+		9249B65E18DACDBE000040F6 /* web in Resources */ = {isa = PBXBuildFile; fileRef = 9249B65D18DACDBE000040F6 /* web */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9249B5FD18DA9859000040F6 /* Vlizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vlizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9249B60018DA9859000040F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9249B60218DA9859000040F6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9249B60418DA9859000040F6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9249B62218DA9859000040F6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		9249B64818DACDA2000040F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main_iPad.storyboard; sourceTree = "<group>"; };
+		9249B64A18DACDA2000040F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
+		9249B64D18DACDA2000040F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		9249B64E18DACDA2000040F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Vlizer/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		9249B64F18DACDA2000040F6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Vlizer/main.m; sourceTree = SOURCE_ROOT; };
+		9249B65018DACDA2000040F6 /* Vlizer-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Vlizer-Prefix.pch"; path = "Vlizer/Vlizer-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		9249B65118DACDA2000040F6 /* VZAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VZAppDelegate.h; path = Vlizer/VZAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		9249B65218DACDA2000040F6 /* VZAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VZAppDelegate.m; path = Vlizer/VZAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		9249B65318DACDA2000040F6 /* VZViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VZViewController.h; path = Vlizer/VZViewController.h; sourceTree = SOURCE_ROOT; };
+		9249B65418DACDA2000040F6 /* VZViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VZViewController.m; path = Vlizer/VZViewController.m; sourceTree = SOURCE_ROOT; };
+		9249B65C18DACDB3000040F6 /* Vlizer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Vlizer-Info.plist"; path = "Vlizer/Vlizer-Info.plist"; sourceTree = SOURCE_ROOT; };
+		9249B65D18DACDBE000040F6 /* web */ = {isa = PBXFileReference; lastKnownFileType = folder; name = web; path = Vlizer/web; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9249B5FA18DA9859000040F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9249B60318DA9859000040F6 /* CoreGraphics.framework in Frameworks */,
+				9249B60518DA9859000040F6 /* UIKit.framework in Frameworks */,
+				9249B60118DA9859000040F6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9249B5F418DA9858000040F6 = {
+			isa = PBXGroup;
+			children = (
+				9249B60618DA9859000040F6 /* Zlizer */,
+				9249B5FF18DA9859000040F6 /* Frameworks */,
+				9249B5FE18DA9859000040F6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9249B5FE18DA9859000040F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9249B5FD18DA9859000040F6 /* Vlizer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9249B5FF18DA9859000040F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9249B60018DA9859000040F6 /* Foundation.framework */,
+				9249B60218DA9859000040F6 /* CoreGraphics.framework */,
+				9249B60418DA9859000040F6 /* UIKit.framework */,
+				9249B62218DA9859000040F6 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9249B60618DA9859000040F6 /* Zlizer */ = {
+			isa = PBXGroup;
+			children = (
+				9249B64618DACDA2000040F6 /* Base.lproj */,
+				9249B64B18DACDA2000040F6 /* en.lproj */,
+				9249B64E18DACDA2000040F6 /* Images.xcassets */,
+				9249B64F18DACDA2000040F6 /* main.m */,
+				9249B65018DACDA2000040F6 /* Vlizer-Prefix.pch */,
+				9249B65118DACDA2000040F6 /* VZAppDelegate.h */,
+				9249B65218DACDA2000040F6 /* VZAppDelegate.m */,
+				9249B65318DACDA2000040F6 /* VZViewController.h */,
+				9249B65418DACDA2000040F6 /* VZViewController.m */,
+				9249B65D18DACDBE000040F6 /* web */,
+				9249B65C18DACDB3000040F6 /* Vlizer-Info.plist */,
+			);
+			path = Zlizer;
+			sourceTree = "<group>";
+		};
+		9249B64618DACDA2000040F6 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				9249B64718DACDA2000040F6 /* Main_iPad.storyboard */,
+				9249B64918DACDA2000040F6 /* Main_iPhone.storyboard */,
+			);
+			name = Base.lproj;
+			path = Vlizer/Base.lproj;
+			sourceTree = SOURCE_ROOT;
+		};
+		9249B64B18DACDA2000040F6 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				9249B64C18DACDA2000040F6 /* InfoPlist.strings */,
+			);
+			name = en.lproj;
+			path = Vlizer/en.lproj;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9249B5FC18DA9859000040F6 /* Vlizer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9249B63218DA9859000040F6 /* Build configuration list for PBXNativeTarget "Vlizer" */;
+			buildPhases = (
+				9249B5F918DA9859000040F6 /* Sources */,
+				9249B5FA18DA9859000040F6 /* Frameworks */,
+				9249B5FB18DA9859000040F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Vlizer;
+			productName = Zlizer;
+			productReference = 9249B5FD18DA9859000040F6 /* Vlizer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9249B5F518DA9858000040F6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VZ;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Mac003;
+			};
+			buildConfigurationList = 9249B5F818DA9858000040F6 /* Build configuration list for PBXProject "Vlizer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9249B5F418DA9858000040F6;
+			productRefGroup = 9249B5FE18DA9859000040F6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9249B5FC18DA9859000040F6 /* Vlizer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9249B5FB18DA9859000040F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9249B65E18DACDBE000040F6 /* web in Resources */,
+				9249B65618DACDA2000040F6 /* Main_iPhone.storyboard in Resources */,
+				9249B65818DACDA2000040F6 /* Images.xcassets in Resources */,
+				9249B65718DACDA2000040F6 /* InfoPlist.strings in Resources */,
+				9249B65518DACDA2000040F6 /* Main_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9249B5F918DA9859000040F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9249B65B18DACDA2000040F6 /* VZViewController.m in Sources */,
+				9249B65A18DACDA2000040F6 /* VZAppDelegate.m in Sources */,
+				9249B65918DACDA2000040F6 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9249B64718DACDA2000040F6 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9249B64818DACDA2000040F6 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		9249B64918DACDA2000040F6 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9249B64A18DACDA2000040F6 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		9249B64C18DACDA2000040F6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9249B64D18DACDA2000040F6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9249B63018DA9859000040F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9249B63118DA9859000040F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9249B63318DA9859000040F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Vlizer/Vlizer-Prefix.pch";
+				INFOPLIST_FILE = "Vlizer/Vlizer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = Vlizer;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9249B63418DA9859000040F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Vlizer/Vlizer-Prefix.pch";
+				INFOPLIST_FILE = "Vlizer/Vlizer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = Vlizer;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9249B5F818DA9858000040F6 /* Build configuration list for PBXProject "Vlizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9249B63018DA9859000040F6 /* Debug */,
+				9249B63118DA9859000040F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9249B63218DA9859000040F6 /* Build configuration list for PBXNativeTarget "Vlizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9249B63318DA9859000040F6 /* Debug */,
+				9249B63418DA9859000040F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9249B5F518DA9858000040F6 /* Project object */;
+}

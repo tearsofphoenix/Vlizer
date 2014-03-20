@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Zlizer.xcodeproj">
+      location = "self:Vlizer.xcodeproj">
    </FileRef>
 </Workspace>
