@@ -3234,23 +3234,18 @@ function Ie(a) {
     a.ia.appendChild(d);
     P(c, "stop", function() {
         Be(d);
-        var c = ze();
-        Ce(d, function() {
-            a.ia.removeChild(d);
-            a.ia.appendChild(c);
-            Be(c);
-            var f = Ae(a);
-            Ce(c, function() {
-                a.ia.removeChild(c);
-                a.ia.appendChild(f);
-                Be(f);
-                Ce(f, function() {
-                    a.ia.removeChild(f);
-                    a.ia.removeChild(b);
-                    a.start()
+
+          var f = Ae(a);
+          Ce(d, function() {
+             a.ia.removeChild(d);
+             a.ia.appendChild(f);
+             Be(f);
+             Ce(f, function() {
+                a.ia.removeChild(f);
+                a.ia.removeChild(b);
+                a.start()
                 })
-            })
-        })
+             })
     })
 }
 function Ke(a) {
