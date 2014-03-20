@@ -20,9 +20,10 @@
 {
     if (self = [super initWithSize:size])
     {
-        //[self setBackgroundColor: [SKColor colorWithRed:0.27 green:0.27 blue:0.27 alpha:1]];
-        [self setBackgroundColor: [UIColor blackColor]];
-
+        SKSpriteNode *backgroundNode = [SKSpriteNode spriteNodeWithImageNamed: @"background"];
+        [backgroundNode setPosition: CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+        
+        [self addChild: backgroundNode];
     }
     
     return self;

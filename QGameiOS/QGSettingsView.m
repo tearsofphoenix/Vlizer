@@ -9,6 +9,7 @@
 #import "QGSettingsView.h"
 #import "QGScene.h"
 #import "QGMusicManager.h"
+#import "VZTheme.h"
 
 @implementation QGSettingsView
 
@@ -17,11 +18,11 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-        [self setBackgroundColor: [UIColor blackColor]];
+        [self setBackgroundColor: [UIColor colorWithPatternImage: [UIImage imageNamed: @"background"]]];
         
         UILabel *soundLabel = [[UILabel alloc] initWithFrame: CGRectMake(30, 140, 180, 30)];
         [soundLabel setBackgroundColor: [UIColor clearColor]];
-        [soundLabel setTextColor: [UIColor whiteColor]];
+        [soundLabel setTextColor: [VZTheme textColor]];
         [soundLabel setText: @"Disable sound effects:"];
         
         [self addSubview: soundLabel];

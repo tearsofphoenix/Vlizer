@@ -10,4 +10,9 @@
 
 @implementation VZTheme
 
++ (UIColor *)textColor
+{
+    return [UIColor blackColor];
+}
+
 @end

@@ -23,6 +23,9 @@
 		9242EA2518D98621001BC217 /* splash.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9242EA2418D98621001BC217 /* splash.m4a */; };
 		9242EA2718D98BA5001BC217 /* back.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9242EA2618D98BA5001BC217 /* back.m4a */; };
 		9249B63E18DABF1F000040F6 /* web in Resources */ = {isa = PBXBuildFile; fileRef = 9249B63D18DABF1F000040F6 /* web */; };
+		9249B64118DAC759000040F6 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9249B63F18DAC759000040F6 /* background.png */; };
+		9249B64218DAC759000040F6 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9249B64018DAC759000040F6 /* background@2x.png */; };
+		9249B64518DAC95C000040F6 /* VZTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 9249B64418DAC95C000040F6 /* VZTheme.m */; };
 		9252DD4018D2B11C00C8FDAF /* QGDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9252DD3F18D2B11C00C8FDAF /* QGDataService.m */; };
 		9276281418D1855B0054CE64 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 9276281018D1855B0054CE64 /* back.png */; };
 		9276281518D1855B0054CE64 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9276281118D1855B0054CE64 /* back@2x.png */; };
@@ -78,6 +81,10 @@
 		9242EA2418D98621001BC217 /* splash.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = splash.m4a; sourceTree = "<group>"; };
 		9242EA2618D98BA5001BC217 /* back.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = back.m4a; sourceTree = "<group>"; };
 		9249B63D18DABF1F000040F6 /* web */ = {isa = PBXFileReference; lastKnownFileType = folder; path = web; sourceTree = SOURCE_ROOT; };
+		9249B63F18DAC759000040F6 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		9249B64018DAC759000040F6 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
+		9249B64318DAC95C000040F6 /* VZTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZTheme.h; sourceTree = "<group>"; };
+		9249B64418DAC95C000040F6 /* VZTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZTheme.m; sourceTree = "<group>"; };
 		9252DD3E18D2B11C00C8FDAF /* QGDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGDataService.h; sourceTree = "<group>"; };
 		9252DD3F18D2B11C00C8FDAF /* QGDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGDataService.m; sourceTree = "<group>"; };
 		9276281018D1855B0054CE64 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
@@ -116,12 +123,12 @@
 		92F52B0318C83BAC008BCA12 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		92F52B0518C83BAC008BCA12 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		92F52B2018C83BAC008BCA12 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		92F52B7418C85886008BCA12 /* ZlizeriOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZlizeriOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92F52B7418C85886008BCA12 /* VlizeriOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VlizeriOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F52B7818C85886008BCA12 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		92F52B7C18C85886008BCA12 /* ZlizeriOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZlizeriOS-Info.plist"; sourceTree = "<group>"; };
+		92F52B7C18C85886008BCA12 /* VlizeriOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VlizeriOS-Info.plist"; sourceTree = "<group>"; };
 		92F52B7E18C85886008BCA12 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		92F52B8018C85886008BCA12 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		92F52B8218C85886008BCA12 /* ZlizeriOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZlizeriOS-Prefix.pch"; sourceTree = "<group>"; };
+		92F52B8218C85886008BCA12 /* VlizeriOS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VlizeriOS-Prefix.pch"; sourceTree = "<group>"; };
 		92F52B8318C85886008BCA12 /* QGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QGAppDelegate.h; sourceTree = "<group>"; };
 		92F52B8418C85886008BCA12 /* QGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QGAppDelegate.m; sourceTree = "<group>"; };
 		92F52B8C18C85886008BCA12 /* QGGameView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QGGameView.h; sourceTree = "<group>"; };
@@ -161,6 +168,8 @@
 		92273E6618CFFB6D00EC2E25 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9249B63F18DAC759000040F6 /* background.png */,
+				9249B64018DAC759000040F6 /* background@2x.png */,
 				9242EA2618D98BA5001BC217 /* back.m4a */,
 				9242EA2418D98621001BC217 /* splash.m4a */,
 				9276281018D1855B0054CE64 /* back.png */,
@@ -180,6 +189,8 @@
 				92DC066718CEE5D80005C638 /* QGMusicManager.m */,
 				9252DD3E18D2B11C00C8FDAF /* QGDataService.h */,
 				9252DD3F18D2B11C00C8FDAF /* QGDataService.m */,
+				9249B64318DAC95C000040F6 /* VZTheme.h */,
+				9249B64418DAC95C000040F6 /* VZTheme.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -246,7 +257,7 @@
 		92F52AFF18C83BAC008BCA12 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				92F52B7418C85886008BCA12 /* ZlizeriOS.app */,
+				92F52B7418C85886008BCA12 /* VlizeriOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -292,10 +303,10 @@
 		92F52B7B18C85886008BCA12 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				92F52B7C18C85886008BCA12 /* ZlizeriOS-Info.plist */,
+				92F52B7C18C85886008BCA12 /* VlizeriOS-Info.plist */,
 				92F52B7D18C85886008BCA12 /* InfoPlist.strings */,
 				92F52B8018C85886008BCA12 /* main.m */,
-				92F52B8218C85886008BCA12 /* ZlizeriOS-Prefix.pch */,
+				92F52B8218C85886008BCA12 /* VlizeriOS-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -303,9 +314,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		92F52B7318C85886008BCA12 /* Zlizer */ = {
+		92F52B7318C85886008BCA12 /* Vlizer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 92F52BA818C85887008BCA12 /* Build configuration list for PBXNativeTarget "Zlizer" */;
+			buildConfigurationList = 92F52BA818C85887008BCA12 /* Build configuration list for PBXNativeTarget "Vlizer" */;
 			buildPhases = (
 				92F52B7018C85886008BCA12 /* Sources */,
 				92F52B7118C85886008BCA12 /* Frameworks */,
@@ -315,9 +326,9 @@
 			);
 			dependencies = (
 			);
-			name = Zlizer;
+			name = Vlizer;
 			productName = QGameiOS;
-			productReference = 92F52B7418C85886008BCA12 /* ZlizeriOS.app */;
+			productReference = 92F52B7418C85886008BCA12 /* VlizeriOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -343,7 +354,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 92F52AF918C83BAC008BCA12 /* Build configuration list for PBXProject "Zlizer" */;
+			buildConfigurationList = 92F52AF918C83BAC008BCA12 /* Build configuration list for PBXProject "Vlizer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -356,7 +367,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				92F52B7318C85886008BCA12 /* Zlizer */,
+				92F52B7318C85886008BCA12 /* Vlizer */,
 			);
 		};
 /* End PBXProject section */
@@ -368,6 +379,7 @@
 			files = (
 				92273E6C18CFFB6D00EC2E25 /* key.png in Resources */,
 				92273E6B18CFFB6D00EC2E25 /* door.png in Resources */,
+				9249B64118DAC759000040F6 /* background.png in Resources */,
 				9276281418D1855B0054CE64 /* back.png in Resources */,
 				92F52B9518C85887008BCA12 /* Images.xcassets in Resources */,
 				9242EA2718D98BA5001BC217 /* back.m4a in Resources */,
@@ -375,6 +387,7 @@
 				9242EA2518D98621001BC217 /* splash.m4a in Resources */,
 				92273E6D18CFFB6D00EC2E25 /* levels.json in Resources */,
 				9276281518D1855B0054CE64 /* back@2x.png in Resources */,
+				9249B64218DAC759000040F6 /* background@2x.png in Resources */,
 				9249B63E18DABF1F000040F6 /* web in Resources */,
 				92F52B7F18C85886008BCA12 /* InfoPlist.strings in Resources */,
 				92273E8118D0342400EC2E25 /* message.png in Resources */,
@@ -393,6 +406,7 @@
 				92DC066818CEE5D80005C638 /* QGMusicManager.m in Sources */,
 				92F52B8E18C85886008BCA12 /* QGGameView.m in Sources */,
 				92F52B8518C85886008BCA12 /* QGAppDelegate.m in Sources */,
+				9249B64518DAC95C000040F6 /* VZTheme.m in Sources */,
 				92F52B9118C85886008BCA12 /* QGScene.m in Sources */,
 				9210218618D17D590071DE17 /* QGSettingsView.m in Sources */,
 				60027B4418D88B0F009FCD4A /* APPChildViewController.m in Sources */,
@@ -511,14 +525,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "QGameiOS/ZlizeriOS-Prefix.pch";
+				GCC_PREFIX_HEADER = "QGameiOS/VlizeriOS-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "QGameiOS/ZlizeriOS-Info.plist";
+				INFOPLIST_FILE = "QGameiOS/VlizeriOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = ZlizeriOS;
+				PRODUCT_NAME = VlizeriOS;
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -534,10 +548,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "QGameiOS/ZlizeriOS-Prefix.pch";
-				INFOPLIST_FILE = "QGameiOS/ZlizeriOS-Info.plist";
+				GCC_PREFIX_HEADER = "QGameiOS/VlizeriOS-Prefix.pch";
+				INFOPLIST_FILE = "QGameiOS/VlizeriOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = ZlizeriOS;
+				PRODUCT_NAME = VlizeriOS;
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -548,7 +562,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		92F52AF918C83BAC008BCA12 /* Build configuration list for PBXProject "Zlizer" */ = {
+		92F52AF918C83BAC008BCA12 /* Build configuration list for PBXProject "Vlizer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				92F52B2E18C83BAC008BCA12 /* Debug */,
@@ -557,7 +571,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		92F52BA818C85887008BCA12 /* Build configuration list for PBXNativeTarget "Zlizer" */ = {
+		92F52BA818C85887008BCA12 /* Build configuration list for PBXNativeTarget "Vlizer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				92F52BA918C85887008BCA12 /* Debug */,

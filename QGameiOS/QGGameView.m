@@ -11,6 +11,7 @@
 
 #import "QGAlertView.h"
 #import "QGMusicManager.h"
+#import "VZTheme.h"
 
 @interface QGGameView ()<QGSceneDelegate>
 {
@@ -37,7 +38,7 @@
         [_titleLabel setBackgroundColor: [UIColor clearColor]];
         [_titleLabel setFont: font];
         [_titleLabel setTextAlignment: NSTextAlignmentCenter];
-        [_titleLabel setTextColor: [UIColor whiteColor]];
+        [_titleLabel setTextColor: [VZTheme textColor]];
         [_titleLabel setNumberOfLines: 0];
         [view addSubview: _titleLabel];
         
@@ -46,7 +47,7 @@
         [_contentLabel setBackgroundColor: [UIColor clearColor]];
         [_contentLabel setFont: font];
         [_contentLabel setTextAlignment: NSTextAlignmentCenter];
-        [_contentLabel setTextColor: [UIColor whiteColor]];
+        [_contentLabel setTextColor: [VZTheme textColor]];
         
         [view addSubview: _contentLabel];
         
@@ -57,7 +58,7 @@
         [_messageLabel setFont: [UIFont fontWithName: @"Baskerville-SemiBoldItalic"
                                                 size: 18]];
         [_messageLabel setTextAlignment: NSTextAlignmentCenter];
-        [_messageLabel setTextColor: [UIColor whiteColor]];
+        [_messageLabel setTextColor: [VZTheme textColor]];
         
         [view addSubview: _messageLabel];
         

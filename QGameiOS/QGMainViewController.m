@@ -16,6 +16,7 @@
 #import "UIAlertView+BlockSupport.h"
 #import "QGScene.h"
 #import "QGProductsView.h"
+#import "VZTheme.h"
 
 @interface QGMainViewController ()<UIPageViewControllerDataSource, APPChildViewControllerDelegate>
 
@@ -42,6 +43,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[self view] setBackgroundColor: [UIColor colorWithPatternImage: [UIImage imageNamed: @"background"]]];
     
     _backButton = [[UIButton alloc] initWithFrame: CGRectMake(8, 8, 40, 40)];
     [_backButton setImage: [UIImage imageNamed: @"back"]
@@ -61,6 +63,8 @@
     [playButton setBackgroundColor: [UIColor clearColor]];
     [[playButton titleLabel] setFont: font];
     [[playButton titleLabel] setTextAlignment: NSTextAlignmentCenter];
+    [[playButton titleLabel] setTextColor: [VZTheme textColor]];
+    
     [playButton addTarget: self
                    action: @selector(_handlePlayEvent:)
          forControlEvents: UIControlEventTouchUpInside];
@@ -72,6 +76,8 @@
     [settingsButton setTitle: @"Settings"
                     forState: UIControlStateNormal];
     [[settingsButton titleLabel] setTextAlignment: NSTextAlignmentCenter];
+    [[settingsButton titleLabel] setTextColor: [VZTheme textColor]];
+
     [settingsButton addTarget: self
                        action: @selector(_handleSettingsButtonEvent:)
              forControlEvents: UIControlEventTouchUpInside];
@@ -83,6 +89,8 @@
     [productsButton setBackgroundColor: [UIColor clearColor]];
     [[productsButton titleLabel] setFont: font];
     [[productsButton titleLabel] setTextAlignment: NSTextAlignmentCenter];
+    [[productsButton titleLabel] setTextColor: [VZTheme textColor]];
+
     [productsButton addTarget: self
                        action: @selector(_handleProductsEvent:)
              forControlEvents: UIControlEventTouchUpInside];
@@ -92,6 +100,8 @@
     [feedbackButton setBackgroundColor: [UIColor clearColor]];
     [[feedbackButton titleLabel] setFont: font];
     [[feedbackButton titleLabel] setTextAlignment: NSTextAlignmentCenter];
+    [[feedbackButton titleLabel] setTextColor: [VZTheme textColor]];
+
     [feedbackButton setTitle: @"Feedback"
                     forState: UIControlStateNormal];
     [feedbackButton addTarget: self

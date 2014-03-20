@@ -7,6 +7,7 @@
 //
 
 #import "QGAlertView.h"
+#import "VZTheme.h"
 
 @interface QGAlertView ()
 
@@ -37,7 +38,7 @@
         _titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(0, 0, width, 40)];
         [_titleLabel setBackgroundColor: [UIColor clearColor]];
         [_titleLabel setTextAlignment: NSTextAlignmentCenter];
-        [_titleLabel setTextColor: [UIColor whiteColor]];
+        [_titleLabel setTextColor: [VZTheme textColor]];
         [_titleLabel setText: @"Notice"];
         [self addSubview: _titleLabel];
         
@@ -45,7 +46,7 @@
         [_contentLabel setBackgroundColor: [UIColor clearColor]];
         [_contentLabel setNumberOfLines: 0];
         [_contentLabel setTextAlignment: NSTextAlignmentCenter];
-        [_contentLabel setTextColor: [UIColor whiteColor]];
+        [_contentLabel setTextColor: [VZTheme textColor]];
         
         [self addSubview: _contentLabel];
         

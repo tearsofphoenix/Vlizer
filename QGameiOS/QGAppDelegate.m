@@ -28,7 +28,7 @@
     
     [_window makeKeyAndVisible];
     
-    [RageIAPHelper sharedInstance];
+//    [RageIAPHelper sharedInstance];
     
     // Override point for customization after application launch.
     return YES;

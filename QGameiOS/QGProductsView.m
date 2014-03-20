@@ -24,7 +24,9 @@
     self = [super initWithFrame: frame];
     if (self)
     {
-        [self setBackgroundColor: [UIColor blackColor]];
+        [self setBackgroundColor: [UIColor colorWithPatternImage: [UIImage imageNamed: @"background"]]];
+
+//        [self setBackgroundColor: [UIColor blackColor]];
         
         CGRect bounds = [self bounds];
         bounds.origin.y += 80;

@@ -10,4 +10,6 @@
 
 @interface VZTheme : NSObject
 
++ (UIColor *)textColor;
+
 @end
