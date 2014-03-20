@@ -3228,7 +3228,7 @@ q.ye = function(a, b) {
 function Ie(a) {
     var b = (new Y).i("Your game is about to start").l(52).a(0, 0);
     a.ia.appendChild(b);
-    var c = (new ve(0, 200)).s(1.5);
+    var c = (new ve(0, 200)).s(0.5);
     T(b, c);
     var d = ye();
     a.ia.appendChild(d);
