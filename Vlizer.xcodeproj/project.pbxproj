@@ -26,6 +26,8 @@
 		9249B64518DAC95C000040F6 /* VZTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 9249B64418DAC95C000040F6 /* VZTheme.m */; };
 		9249B66018DAD030000040F6 /* QGMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9249B65F18DAD030000040F6 /* QGMainViewController.xib */; };
 		9249B66318DAD514000040F6 /* VZLevelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9249B66218DAD514000040F6 /* VZLevelCell.m */; };
+		9249B66718DADB21000040F6 /* VZGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9249B66518DADB21000040F6 /* VZGameViewController.m */; };
+		9249B66818DADB21000040F6 /* VZGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9249B66618DADB21000040F6 /* VZGameViewController.xib */; };
 		9252DD4018D2B11C00C8FDAF /* QGDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9252DD3F18D2B11C00C8FDAF /* QGDataService.m */; };
 		9276281418D1855B0054CE64 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 9276281018D1855B0054CE64 /* back.png */; };
 		9276281518D1855B0054CE64 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9276281118D1855B0054CE64 /* back@2x.png */; };
@@ -85,6 +87,9 @@
 		9249B65F18DAD030000040F6 /* QGMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QGMainViewController.xib; sourceTree = "<group>"; };
 		9249B66118DAD514000040F6 /* VZLevelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZLevelCell.h; sourceTree = "<group>"; };
 		9249B66218DAD514000040F6 /* VZLevelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZLevelCell.m; sourceTree = "<group>"; };
+		9249B66418DADB21000040F6 /* VZGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZGameViewController.h; sourceTree = "<group>"; };
+		9249B66518DADB21000040F6 /* VZGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZGameViewController.m; sourceTree = "<group>"; };
+		9249B66618DADB21000040F6 /* VZGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VZGameViewController.xib; sourceTree = "<group>"; };
 		9252DD3E18D2B11C00C8FDAF /* QGDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGDataService.h; sourceTree = "<group>"; };
 		9252DD3F18D2B11C00C8FDAF /* QGDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGDataService.m; sourceTree = "<group>"; };
 		9276281018D1855B0054CE64 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
@@ -284,6 +289,9 @@
 				92F52B8418C85886008BCA12 /* QGAppDelegate.m */,
 				9249B66118DAD514000040F6 /* VZLevelCell.h */,
 				9249B66218DAD514000040F6 /* VZLevelCell.m */,
+				9249B66418DADB21000040F6 /* VZGameViewController.h */,
+				9249B66518DADB21000040F6 /* VZGameViewController.m */,
+				9249B66618DADB21000040F6 /* VZGameViewController.xib */,
 				9210218118D17D180071DE17 /* QGMainViewController.h */,
 				9210218218D17D180071DE17 /* QGMainViewController.m */,
 				9249B65F18DAD030000040F6 /* QGMainViewController.xib */,
@@ -382,6 +390,7 @@
 				92273E6B18CFFB6D00EC2E25 /* door.png in Resources */,
 				9249B64118DAC759000040F6 /* background.png in Resources */,
 				9276281418D1855B0054CE64 /* back.png in Resources */,
+				9249B66818DADB21000040F6 /* VZGameViewController.xib in Resources */,
 				92F52B9518C85887008BCA12 /* Images.xcassets in Resources */,
 				9242EA2718D98BA5001BC217 /* back.m4a in Resources */,
 				9242EA2518D98621001BC217 /* splash.m4a in Resources */,
@@ -413,6 +422,7 @@
 				9276282318D1A3F80054CE64 /* QGAlertView.m in Sources */,
 				9249B66318DAD514000040F6 /* VZLevelCell.m in Sources */,
 				92A8B38018D93FD300D28DDC /* MFNetworkClientInternal.m in Sources */,
+				9249B66718DADB21000040F6 /* VZGameViewController.m in Sources */,
 				92A8B37E18D93FD300D28DDC /* MFCacheManagerInternal.m in Sources */,
 				92A8B38618D93FD300D28DDC /* NSObject+GRExtensions.m in Sources */,
 				9210218318D17D180071DE17 /* QGMainViewController.m in Sources */,

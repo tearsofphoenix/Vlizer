@@ -18,7 +18,7 @@
 #import "QGProductsView.h"
 #import "VZTheme.h"
 #import "VZLevelCell.h"
-
+#import "VZGameViewController.h"
 
 @interface QGMainViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -49,6 +49,22 @@
 //                                      [_contentView setTransform: CGAffineTransformIdentity];
                                   })];
 
+}
+
+- (IBAction)handlePlayButton: (id)sender
+{
+    VZGameViewController *gameViewController = [[VZGameViewController alloc] initWithNibName: @"VZGameViewController"
+                                                                                      bundle: [NSBundle mainBundle]];
+    [[gameViewController view] setAlpha: 0];
+
+    [self presentViewController: gameViewController
+                       animated: NO
+                     completion: nil];
+    [UIView animateWithDuration: 0.3
+                     animations: (^
+                                  {
+                                      [[gameViewController view] setAlpha: 1];
+                                  })];
 }
 
 - (void)viewDidLoad
