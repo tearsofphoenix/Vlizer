@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define VZHasShowTutor  @"com.veritas.application.ios.has-show-tutor"
+
 @interface VZGameViewController : UIViewController
 
 @end

@@ -66,7 +66,7 @@
                                 <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="mB9-iq-KJo">
                                     <rect key="frame" x="23" y="337" width="274" height="180"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <color key="backgroundColor" red="0.94117653369999998" green="0.59607845540000004" blue="0.14509804549999999" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="f52-fa-t29">
                                         <size key="itemSize" width="40" height="40"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>

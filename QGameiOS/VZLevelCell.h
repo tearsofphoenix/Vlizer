@@ -12,4 +12,6 @@
 
 @interface VZLevelCell : UICollectionViewCell
 
+@property (nonatomic, strong) UILabel *textLabel;
+
 @end

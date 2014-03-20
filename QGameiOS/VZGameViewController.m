@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
 @property (weak, nonatomic) IBOutlet SKView *skview;
 
+@property (weak, nonatomic) IBOutlet UIView *tutorView;
+
 @end
 
 @implementation VZGameViewController
@@ -22,16 +24,56 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self)
+    {
         // Custom initialization
     }
     return self;
 }
 
+- (void)_showNumberView
+{
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    [_tutorView setTransform: CGAffineTransformMakeTranslation(0, -768)];
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *record = [defaults stringForKey: VZHasShowTutor];
+    if ([record boolValue])
+    {
+        [self _showNumberView];
+    }else
+    {
+        [UIView animateWithDuration: 0.5
+                         animations: (^
+                                      {
+                                          [_tutorView setTransform: CGAffineTransformIdentity];
+                                          [_tutorView setAlpha: 0.8];
+                                      })
+                         completion: (^(BOOL finished)
+                                      {
+                                          [UIView animateWithDuration: 0.5
+                                                                delay: 3.0
+                                                              options: 0
+                                                           animations: (^
+                                                                        {
+                                                                            [_tutorView setAlpha: 0];
+                                                                        })
+                                                           completion: (^(BOOL finished)
+                                                                        {
+                                                                            [defaults setObject: @"YES"
+                                                                                         forKey: VZHasShowTutor];
+                                                                            [defaults synchronize];
+                                                                            
+                                                                            [self _showNumberView];
+                                                                        })];
+                                      })];
+    }
 }
 
 - (IBAction)handleBackEvent:(id)sender

@@ -116,11 +116,14 @@
 - (UICollectionViewCell *)collectionView: (UICollectionView *)collectionView
                   cellForItemAtIndexPath: (NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [_levelsView dequeueReusableCellWithReuseIdentifier: VZCellID
-                                                                        forIndexPath: indexPath];
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(0, 0, 40, 40)];
-    [titleLabel setText: @"OK"];
-    [[cell contentView] addSubview: titleLabel];
+    VZLevelCell *cell = [_levelsView dequeueReusableCellWithReuseIdentifier: VZCellID
+                                                               forIndexPath: indexPath];
+
+    NSInteger section = [indexPath section];
+    NSInteger row = [indexPath row];
+    NSInteger idx = section * 5 + row;
+    
+    [[cell textLabel] setText: [NSString stringWithFormat: @"%d", idx + 1]];
     
     return cell;
 }

@@ -97,7 +97,7 @@
         NSData *data = [str dataUsingEncoding: NSUTF8StringEncoding];
         
         [request setHTTPBody: data];
-        [request setValue: [NSString stringWithFormat:@"%u", [data length]]
+        [request setValue: [NSString stringWithFormat:@"%lu", (unsigned long)[data length]]
        forHTTPHeaderField: @"Content-Length"];
     }
 }

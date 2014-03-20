@@ -67,7 +67,7 @@
 - (NSString *)MD5String
 {
     unsigned char digest[CC_MD5_DIGEST_LENGTH];
-    CC_MD5([self UTF8String], [self length], digest);
+    CC_MD5([self UTF8String], (CC_LONG)[self length], digest);
     
     NSString *result = [NSString stringWithFormat: @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
                         digest[0],  digest[1], digest[2],  digest[3], digest[4],  digest[5], digest[6],  digest[7],
@@ -79,7 +79,7 @@
 - (NSString *)SHA1String
 {
     unsigned char digest[CC_SHA1_DIGEST_LENGTH];
-    CC_SHA1([self UTF8String], [self length], digest);
+    CC_SHA1([self UTF8String], (CC_LONG)[self length], digest);
     
     
     NSString *result = [NSString stringWithFormat: @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",

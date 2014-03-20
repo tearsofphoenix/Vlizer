@@ -86,7 +86,7 @@
         char *b2 = NULL;
 		*bp++ = strtol(buf, &b2, 16);
         
-		NSAssert(b2 == buf + 2, @"String should be all hex digits: %@ (bad digit around %d)", hex, i);
+		NSAssert(b2 == buf + 2, @"String should be all hex digits: %@ (bad digit around %ld)", hex, (long)i);
 	}
 	
 	return [NSData dataWithBytesNoCopy: bytes
@@ -97,7 +97,7 @@
 - (NSString *)MD5String
 {
     unsigned char digest[CC_MD5_DIGEST_LENGTH];
-    CC_MD5([self bytes], [self length], digest);
+    CC_MD5([self bytes], (CC_LONG)[self length], digest);
     
     NSString *result = [NSString stringWithFormat: @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
                         digest[0],  digest[1], digest[2],  digest[3], digest[4],  digest[5], digest[6],  digest[7],
@@ -109,7 +109,7 @@
 - (NSString *)SHA1String
 {
     unsigned char digest[CC_SHA1_DIGEST_LENGTH];
-    CC_SHA1([self bytes], [self length], digest);
+    CC_SHA1([self bytes], (CC_LONG)[self length], digest);
     
     
     NSString *result = [NSString stringWithFormat: @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
