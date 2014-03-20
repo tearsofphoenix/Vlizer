@@ -12,6 +12,7 @@
 		60027B5518DB036B009FCD4A /* dialog_tutorial1.png in Resources */ = {isa = PBXBuildFile; fileRef = 60027B5318DB036B009FCD4A /* dialog_tutorial1.png */; };
 		60027B5618DB036B009FCD4A /* dialog_tutorial2.png in Resources */ = {isa = PBXBuildFile; fileRef = 60027B5418DB036B009FCD4A /* dialog_tutorial2.png */; };
 		60027B5818DB0669009FCD4A /* dialog_number.png in Resources */ = {isa = PBXBuildFile; fileRef = 60027B5718DB0669009FCD4A /* dialog_number.png */; };
+		60027B5918DB0EB1009FCD4A /* bubble_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 60027B4B18DB0008009FCD4A /* bubble_back.png */; };
 		60EFDC2E18D0A675005F13A9 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EFDC2B18D0A675005F13A9 /* IAPHelper.m */; };
 		60EFDC2F18D0A675005F13A9 /* RageIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EFDC2D18D0A675005F13A9 /* RageIAPHelper.m */; };
 		9210218318D17D180071DE17 /* QGMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9210218218D17D180071DE17 /* QGMainViewController.m */; };
@@ -140,7 +141,7 @@
 		92F52B0318C83BAC008BCA12 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		92F52B0518C83BAC008BCA12 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		92F52B2018C83BAC008BCA12 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		92F52B7418C85886008BCA12 /* VlizeriOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VlizeriOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92F52B7418C85886008BCA12 /* Vlizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vlizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F52B7818C85886008BCA12 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		92F52B7C18C85886008BCA12 /* VlizeriOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VlizeriOS-Info.plist"; sourceTree = "<group>"; };
 		92F52B7E18C85886008BCA12 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -301,7 +302,7 @@
 		92F52AFF18C83BAC008BCA12 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				92F52B7418C85886008BCA12 /* VlizeriOS.app */,
+				92F52B7418C85886008BCA12 /* Vlizer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -374,7 +375,7 @@
 			);
 			name = Vlizer;
 			productName = QGameiOS;
-			productReference = 92F52B7418C85886008BCA12 /* VlizeriOS.app */;
+			productReference = 92F52B7418C85886008BCA12 /* Vlizer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -423,6 +424,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60027B5918DB0EB1009FCD4A /* bubble_back.png in Resources */,
 				92273E6C18CFFB6D00EC2E25 /* key.png in Resources */,
 				60027B5818DB0669009FCD4A /* dialog_number.png in Resources */,
 				9249B66018DAD030000040F6 /* QGMainViewController.xib in Resources */,
@@ -582,7 +584,7 @@
 				);
 				INFOPLIST_FILE = "QGameiOS/VlizeriOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = VlizeriOS;
+				PRODUCT_NAME = Vlizer;
 				PROVISIONING_PROFILE = "E9670600-840E-483A-8E63-BC69E0D01D18";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -601,7 +603,7 @@
 				GCC_PREFIX_HEADER = "QGameiOS/VlizeriOS-Prefix.pch";
 				INFOPLIST_FILE = "QGameiOS/VlizeriOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = VlizeriOS;
+				PRODUCT_NAME = Vlizer;
 				PROVISIONING_PROFILE = "E9670600-840E-483A-8E63-BC69E0D01D18";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -7,7 +7,7 @@
 //
 
 #import "VZGameViewController.h"
-#import <SpriteKit/SpriteKit.h>
+#import "QGScene.h"
 
 @interface VZGameViewController ()
 
@@ -19,13 +19,18 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *preNumberLabel;
 @property (weak, nonatomic) IBOutlet UIView *numberView;
+
+@property (nonatomic, strong) QGScene *scene;
+
 @end
 
 @implementation VZGameViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithNibName: (NSString *)nibNameOrNil
+               bundle: (NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName: nibNameOrNil
+                           bundle: nibBundleOrNil];
     if (self)
     {
         // Custom initialization
@@ -64,6 +69,7 @@
     
     [_tutorView setTransform: CGAffineTransformMakeTranslation(0, -768)];
     
+#if 0
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *record = [defaults stringForKey: VZHasShowTutor];
     if ([record boolValue])
@@ -96,6 +102,10 @@
                                                                         })];
                                       })];
     }
+#endif
+    
+    QGScene *scene = [[QGScene alloc] initWithSize: [_skview bounds].size];
+    [_skview presentScene: scene];
 }
 
 - (void)_startGame
