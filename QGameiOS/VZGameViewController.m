@@ -69,9 +69,9 @@
     
     [_tutorView setTransform: CGAffineTransformMakeTranslation(0, -768)];
     
-    [_skview setShowsDrawCount: YES];
+//    [_skview setShowsDrawCount: YES];
     [_skview setShowsFPS: YES];
-    [_skview setShowsPhysics: YES];
+//    [_skview setShowsPhysics: YES];
     [_skview setShowsNodeCount: YES];
     
 #if 0

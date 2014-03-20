@@ -19,10 +19,18 @@
 
 @property (nonatomic, strong) NSMutableArray *bubbles;
 @property (nonatomic, strong) SKSpriteNode *groundNode;
+@property (nonatomic, strong) SKEmitterNode *touchNode;
 
 @end
 
 @implementation QGScene
+
++ (SKEmitterNode *)emmitterNode
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"trace"
+                                                     ofType: @"sks"];
+    return [NSKeyedUnarchiver unarchiveObjectWithFile: path];
+}
 
 - (id)initWithSize: (CGSize)size
 {
@@ -37,7 +45,7 @@
         [self addChild: backgroundNode];
 
         [self setGroundNode: [SKSpriteNode spriteNodeWithImageNamed: @"floor"]];
-        [_groundNode setAnchorPoint: CGPointZero];
+        [_groundNode setAnchorPoint: CGPointMake(0, 0.5)];
         [self addChild: _groundNode];
         
         CGRect groundFrame = [_groundNode frame];
@@ -60,6 +68,10 @@
             
             [self addChild: node];
         }
+        
+        [self setTouchNode: [QGScene emmitterNode]];
+        [_touchNode setTargetNode: self];
+        [self addChild: _touchNode];
     }
     
     return self;
@@ -93,6 +105,27 @@
         [bodyB setVelocity: CGVectorMake(0, 10)];
         [bubbleNode showBreakAnimation];
     }
+}
+
+- (void)touchesBegan: (NSSet *)touches
+           withEvent: (UIEvent *)event
+{
+    [self touchesMoved: touches
+             withEvent: event];
+}
+
+- (void)touchesMoved: (NSSet *)touches
+           withEvent: (UIEvent *)event
+{
+    [_touchNode setAlpha: 1];
+    [_touchNode runAction: [SKAction moveTo: [[touches anyObject] locationInNode: self]
+                                   duration: 0.05]];
+}
+
+- (void)touchesEnded: (NSSet *)touches
+           withEvent: (UIEvent *)event
+{
+    [_touchNode setAlpha: 0];
 }
 
 @end

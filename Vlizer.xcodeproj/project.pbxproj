@@ -15,6 +15,8 @@
 		60027B5918DB0EB1009FCD4A /* bubble_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 60027B4B18DB0008009FCD4A /* bubble_back.png */; };
 		60027B5B18DB2972009FCD4A /* floor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60027B5A18DB2972009FCD4A /* floor@2x.png */; };
 		60027B5E18DB3C4C009FCD4A /* VZBubbleNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 60027B5D18DB3C4C009FCD4A /* VZBubbleNode.m */; };
+		6083A1C018DB57D8006E828B /* trace.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6083A1BE18DB57D8006E828B /* trace.sks */; };
+		6083A1C118DB57D8006E828B /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6083A1BF18DB57D8006E828B /* spark.png */; };
 		60EFDC2E18D0A675005F13A9 /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EFDC2B18D0A675005F13A9 /* IAPHelper.m */; };
 		60EFDC2F18D0A675005F13A9 /* RageIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EFDC2D18D0A675005F13A9 /* RageIAPHelper.m */; };
 		9210218318D17D180071DE17 /* QGMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9210218218D17D180071DE17 /* QGMainViewController.m */; };
@@ -82,6 +84,8 @@
 		60027B5A18DB2972009FCD4A /* floor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "floor@2x.png"; sourceTree = "<group>"; };
 		60027B5C18DB3C4C009FCD4A /* VZBubbleNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZBubbleNode.h; sourceTree = "<group>"; };
 		60027B5D18DB3C4C009FCD4A /* VZBubbleNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZBubbleNode.m; sourceTree = "<group>"; };
+		6083A1BE18DB57D8006E828B /* trace.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = trace.sks; sourceTree = "<group>"; };
+		6083A1BF18DB57D8006E828B /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		60EFDC2A18D0A675005F13A9 /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
 		60EFDC2B18D0A675005F13A9 /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
 		60EFDC2C18D0A675005F13A9 /* RageIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RageIAPHelper.h; sourceTree = "<group>"; };
@@ -332,6 +336,8 @@
 			children = (
 				92A8B36418D93FD300D28DDC /* Network */,
 				60027B4618D89920009FCD4A /* UIAlertView+BlockSupport.h */,
+				6083A1BE18DB57D8006E828B /* trace.sks */,
+				6083A1BF18DB57D8006E828B /* spark.png */,
 				60027B4718D89920009FCD4A /* UIAlertView+BlockSupport.m */,
 				92F52B8318C85886008BCA12 /* QGAppDelegate.h */,
 				92F52B8418C85886008BCA12 /* QGAppDelegate.m */,
@@ -435,12 +441,14 @@
 				60027B5918DB0EB1009FCD4A /* bubble_back.png in Resources */,
 				92273E6C18CFFB6D00EC2E25 /* key.png in Resources */,
 				60027B5818DB0669009FCD4A /* dialog_number.png in Resources */,
+				6083A1C018DB57D8006E828B /* trace.sks in Resources */,
 				60027B5B18DB2972009FCD4A /* floor@2x.png in Resources */,
 				9249B66018DAD030000040F6 /* QGMainViewController.xib in Resources */,
 				92273E6B18CFFB6D00EC2E25 /* door.png in Resources */,
 				9249B64118DAC759000040F6 /* background.png in Resources */,
 				9276281418D1855B0054CE64 /* back.png in Resources */,
 				9249B66818DADB21000040F6 /* VZGameViewController.xib in Resources */,
+				6083A1C118DB57D8006E828B /* spark.png in Resources */,
 				92F52B9518C85887008BCA12 /* Images.xcassets in Resources */,
 				9242EA2718D98BA5001BC217 /* back.m4a in Resources */,
 				9242EA2518D98621001BC217 /* splash.m4a in Resources */,
