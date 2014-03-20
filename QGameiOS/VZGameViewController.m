@@ -69,6 +69,11 @@
     
     [_tutorView setTransform: CGAffineTransformMakeTranslation(0, -768)];
     
+    [_skview setShowsDrawCount: YES];
+    [_skview setShowsFPS: YES];
+    [_skview setShowsPhysics: YES];
+    [_skview setShowsNodeCount: YES];
+    
 #if 0
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *record = [defaults stringForKey: VZHasShowTutor];
@@ -123,6 +128,11 @@
     
     [[self presentingViewController] dismissViewControllerAnimated: NO
                                                         completion: nil];
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
 
 @end
