@@ -13,6 +13,7 @@
 {
     AVAudioPlayer *_audioPlayer;
 }
+
 @end
 
 @implementation QGMusicManager
@@ -35,30 +36,38 @@ static id gsManager = nil;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (![[defaults stringForKey: QGDisableSoundEffect] boolValue])
     {
-        
-        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource: name
-                                                                  ofType: @"m4a"];
-        
-        NSURL *fileURL = [NSURL fileURLWithPath: soundFilePath];
-        
-        _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL
-                                                                             error: nil];
-        
-        [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback
-                                               error: nil];
-        [[AVAudioSession sharedInstance] setActive: YES
-                                             error: nil];
-        
-        [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
-        
-        [_audioPlayer setVolume: 0.7];
-        
-        [_audioPlayer setDelegate: self];
-        [_audioPlayer setNumberOfLoops: -1];
-        [_audioPlayer stop];
-        [_audioPlayer setCurrentTime: 0];
-        [_audioPlayer play];
+        if (![_audioPlayer isPlaying])
+        {
+            NSString *soundFilePath = [[NSBundle mainBundle] pathForResource: name
+                                                                      ofType: @"caf"];
+            
+            NSURL *fileURL = [NSURL fileURLWithPath: soundFilePath];
+            
+            _audioPlayer = nil;
+            _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL
+                                                                                 error: nil];
+            
+            [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback
+                                                   error: nil];
+            [[AVAudioSession sharedInstance] setActive: YES
+                                                 error: nil];
+            
+            [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+            
+            [_audioPlayer setVolume: 0.7];
+            
+            [_audioPlayer setDelegate: self];
+            [_audioPlayer setNumberOfLoops: numberOfLoops];
+            [_audioPlayer setCurrentTime: 0];
+            [_audioPlayer play];
+        }
     }
+}
+
+- (void)audioPlayerDidFinishPlaying: (AVAudioPlayer *)player
+                       successfully: (BOOL)flag
+{
+    
 }
 
 @end

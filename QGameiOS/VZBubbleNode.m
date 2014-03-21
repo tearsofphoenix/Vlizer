@@ -7,6 +7,7 @@
 //
 
 #import "VZBubbleNode.h"
+#import "QGMusicManager.h"
 
 @interface VZBubbleNode ()
 
@@ -92,6 +93,9 @@ static SKAction *gsLabelAction = nil;
                                                               [labelNode setColor: [SKColor greenColor]];
                                                               [labelNode setText: [NSString stringWithFormat: @"+%ld", (long)_number]];
                                                               [labelNode setScale: 1.3];
+                                                              
+                                                              [[QGMusicManager manager] playAudio: @"forward"
+                                                                                        loopCount: 0];
                                                           })]
          completion: (^
                       {
@@ -128,6 +132,9 @@ static SKAction *gsLabelAction = nil;
                                                               [labelNode setColor: [SKColor redColor]];
                                                               [labelNode setText: [NSString stringWithFormat: @"-%ld", (long)_number]];
                                                               [labelNode setScale: 1.3];
+                                                              
+                                                              [[QGMusicManager manager] playAudio: @"forward"
+                                                                                        loopCount: 0];
                                                           })]
          completion: (^
                       {
@@ -171,16 +178,11 @@ static SKAction *gsLabelAction = nil;
     if ([self canBeSplit])
     {
         CGSize size = [[self scene] size];
-        CGPoint position = [self position];
-        position.x += 40;
-        
-        NSLog(@"%@", NSStringFromCGPoint(position));
         
         NSInteger numberA = rand() % (_number - 1) + 1;
         VZBubbleNode *nodeA = [[VZBubbleNode alloc] initWithSceneSize: size
                                                         currentNumber: _currentNumber];
         [nodeA setNumber: numberA];
-        [nodeA setPosition: position];
         
         [self setNumber: (_number - numberA)];
         
@@ -188,6 +190,11 @@ static SKAction *gsLabelAction = nil;
     }
     
     return nil;
+}
+
+- (NSString *)debugDescription
+{
+    return [NSString stringWithFormat: @"%@ num: %ld",  [super description], (long)_currentNumber];
 }
 
 - (void)resetNode

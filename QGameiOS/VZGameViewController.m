@@ -10,6 +10,7 @@
 #import "VZScene.h"
 #import "VZProgressView.h"
 #import "VZBubbleNode.h"
+#import "QGMusicManager.h"
 
 @interface VZGameViewController ()<QGSceneDelegate>
 
@@ -32,6 +33,9 @@
 
 - (IBAction)_handleNextLevelEvent: (id)sender
 {
+    [[QGMusicManager manager] playAudio: @"back"
+                              loopCount: 0];
+
     [_progressView setCurrentIndex: [_progressView maxNumber] / 2];
     [_scene startGameWithNumber: 8];
     
@@ -238,6 +242,9 @@ didBreakBubble: (VZBubbleNode *)bubble
 
 - (IBAction)handleBackEvent:(id)sender
 {
+    [[QGMusicManager manager] playAudio: @"back"
+                              loopCount: 0];
+
     [UIView animateWithDuration: 0.5
                      animations: (^
                                   {

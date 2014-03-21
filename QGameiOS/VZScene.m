@@ -40,7 +40,7 @@
     if (self = [super initWithSize:size])
     {
         [self setBubbles: [NSMutableArray arrayWithCapacity: VZBubbleCapacity]];
-        [[self physicsWorld] setGravity: CGVectorMake(0, -0.02)];
+        [[self physicsWorld] setGravity: CGVectorMake(0, -0.016)];
         [[self physicsWorld] setContactDelegate: self];
         
         SKSpriteNode *backgroundNode = [SKSpriteNode spriteNodeWithImageNamed: @"background"];
@@ -114,13 +114,15 @@
         VZBubbleNode *newBubble = [bubbleNode split];
         if (newBubble)
         {
-            [newBubble setPosition: CGPointMake(100, 100)];
-            NSLog(@"in func: %s line: %d %@", __func__, __LINE__, newBubble);
 //            [newBubble runAction: [SKAction moveByX: 30
 //                                                  y: 30
 //                                           duration: 0.5]];
             
             [self addChild: newBubble];
+            [newBubble setPosition: [bubbleNode position]];
+
+            NSLog(@"in func: %s line: %d %@ %@", __func__, __LINE__, newBubble, bubbleNode);
+
             [_bubbles addObject: newBubble];
             
             if ([newBubble number] == _currentNumber)
@@ -129,7 +131,9 @@
                 [_delegate scene: self
                     didGotBubble: newBubble];
                 
-            }else if ([bubbleNode number] == _currentNumber)
+            }
+            
+            if ([bubbleNode number] == _currentNumber)
             {
                 [bubbleNode showSuccessAnimation];
                 [_delegate scene: self

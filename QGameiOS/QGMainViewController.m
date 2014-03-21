@@ -19,6 +19,7 @@
 #import "VZTheme.h"
 #import "VZLevelCell.h"
 #import "VZGameViewController.h"
+#import "QGMusicManager.h"
 
 @interface QGMainViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -32,9 +33,12 @@
 
 - (IBAction)_handleFeedbackEvent: (id)sender
 {
+    [[QGMusicManager manager] playAudio: @"back"
+                              loopCount: 0];
+
     NSString *mailString = [NSString stringWithFormat:@"mailto:?to=%@&subject=%@&body=%@",
 							[@"tearsofphoenix@icloud.com" stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding],
-							[@"Feedback of QGame" stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding],
+							[@"Feedback of Vlizer" stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding],
 							[@""  stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
     
     NSURL *url = [NSURL URLWithString: mailString];
@@ -55,6 +59,9 @@
 
 - (IBAction)handlePickLevelEvent:(id)sender
 {
+    [[QGMusicManager manager] playAudio: @"back"
+                              loopCount: 0];
+
     [UIView animateWithDuration: 0.5
                      animations: (^
                                   {
@@ -64,6 +71,9 @@
 
 - (IBAction)handleBackToMenuEvent:(id)sender
 {
+    [[QGMusicManager manager] playAudio: @"back"
+                              loopCount: 0];
+
     [UIView animateWithDuration: 0.5
                      animations: (^
                                   {
@@ -90,6 +100,9 @@
 
 - (IBAction)handlePlayButton: (id)sender
 {
+    [[QGMusicManager manager] playAudio: @"back"
+                              loopCount: 0];
+
     [self _playLevel: 0];
 }
 
@@ -148,7 +161,7 @@
     NSInteger row = [indexPath row];
     NSInteger idx = section * 5 + row;
     
-    [[cell textLabel] setText: [NSString stringWithFormat: @"%ld", idx + 1]];
+    [[cell textLabel] setText: [NSString stringWithFormat: @"%d", idx + 1]];
     
     return cell;
 }
