@@ -32,7 +32,7 @@ static SKAction *gsLabelAction = nil;
     
 }
 
-- (id)initWithSize: (CGSize)size
+- (id)initWithSceneSize: (CGSize)size
 {
     if ((self = [super initWithImageNamed: @"bubble_back"]))
     {
@@ -46,7 +46,7 @@ static SKAction *gsLabelAction = nil;
         [body setVelocity: CGVectorMake(0, -speed)];
         [body setMass: 0.1];
         [body setCategoryBitMask: VZBubbleMask];
-        [body setContactTestBitMask: VZGroundMask];
+        [body setContactTestBitMask: VZGroundMask | VZTouchMask];
         [body setCollisionBitMask: VZGroundMask];
         
         [self setPhysicsBody: body];
@@ -112,6 +112,35 @@ static SKAction *gsLabelAction = nil;
         [_labelNode setText: [NSString stringWithFormat: @"%d", number]];
     }
 }
+
+- (BOOL)canBeSplit
+{
+    return _number > 1;
+}
+
+- (VZBubbleNode *)split
+{
+    if ([self canBeSplit])
+    {
+        CGSize size = [[self scene] size];
+        CGPoint position = [self position];
+        position.x += 40;
+        
+        NSLog(@"%@", NSStringFromCGPoint(position));
+        
+        NSInteger numberA = rand() % (_number - 1) + 1;
+        VZBubbleNode *nodeA = [[VZBubbleNode alloc] initWithSceneSize: size];
+        [nodeA setNumber: numberA];
+        [nodeA setPosition: position];
+
+        [self setNumber: (_number - numberA)];
+        
+        return nodeA;
+    }
+    
+    return nil;
+}
+
 
 #if 0
 - (void)trace

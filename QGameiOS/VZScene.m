@@ -62,7 +62,7 @@
         
         for (NSInteger iLooper = 0; iLooper < 10; ++iLooper)
         {
-            VZBubbleNode *node = [[VZBubbleNode alloc] initWithSize: size];
+            VZBubbleNode *node = [[VZBubbleNode alloc] initWithSceneSize: size];
             
             [_bubbles addObject: node];
             
@@ -71,6 +71,13 @@
         
         [self setTouchNode: [VZScene emmitterNode]];
         [_touchNode setTargetNode: self];
+        SKPhysicsBody *touchBody = [SKPhysicsBody bodyWithCircleOfRadius: 10];
+        [touchBody setAffectedByGravity: NO];
+        [touchBody setCategoryBitMask: VZTouchMask];
+        [touchBody setContactTestBitMask: VZBubbleMask];
+        [touchBody setCollisionBitMask: VZBubbleMask];
+        [_touchNode setPhysicsBody: touchBody];
+        
         [self addChild: _touchNode];
     }
     
@@ -97,13 +104,36 @@
 {
     SKPhysicsBody *bodyA = [contact bodyA];
     SKPhysicsBody *bodyB = [contact bodyB];
-    if ([bodyA categoryBitMask] == VZGroundMask && [bodyB categoryBitMask] == VZBubbleMask)
+    if ([bodyA categoryBitMask] > [bodyB categoryBitMask])
     {
-        NSLog(@"%@ %@", [bodyA node], [bodyB node]);
+        bodyA = [contact bodyB];
+        bodyB = [contact bodyA];
+    }
+    
+    //NSLog(@"%@ %@", [bodyA node], [bodyB node]);
+    
+    if (([bodyA categoryBitMask] & VZGroundMask) != 0
+        && ([bodyB categoryBitMask] & VZBubbleMask) != 0)
+    {
         VZBubbleNode *bubbleNode = (VZBubbleNode *)[bodyB node];
         
         [bodyB setVelocity: CGVectorMake(0, 10)];
         [bubbleNode showBreakAnimation];
+        
+    }else if (([bodyA categoryBitMask] & VZBubbleMask) != 0
+              && ([bodyB categoryBitMask] & VZTouchMask) != 0)
+    {
+        //try to split
+        VZBubbleNode *bubbleNode = (VZBubbleNode *)[bodyA node];
+        VZBubbleNode *newBubble = [bubbleNode split];
+        if (newBubble)
+        {
+            [self addChild: newBubble];
+            [newBubble runAction: [SKAction moveByX: 30
+                                                  y: 30
+                                           duration: 0.5]];
+            [_bubbles addObject: newBubble];
+        }
     }
 }
 

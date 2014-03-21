@@ -10,16 +10,22 @@
 
 enum
 {
-    VZGroundMask = 0x1 < 1,
-    VZBubbleMask = 0x1 < 2,
+    VZGroundMask = 0x1 << 0,
+    VZBubbleMask = 0x1 << 1,
+    VZTouchMask  = 0x1 << 2,
 };
 
 typedef uint32_t VZConcatMask;
 
 @interface VZBubbleNode : SKSpriteNode
 
-- (id)initWithSize: (CGSize)size;
+- (id)initWithSceneSize: (CGSize)size;
 
 - (void)showBreakAnimation;
+
+- (BOOL)canBeSplit;
+
+- (VZBubbleNode *)split;
+
 
 @end
