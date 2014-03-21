@@ -43,7 +43,7 @@
         [self addChild: backgroundNode];
         
         [self setGroundNode: [SKSpriteNode spriteNodeWithImageNamed: @"floor"]];
-        [_groundNode setAnchorPoint: CGPointMake(0, 0.5)];
+        [_groundNode setAnchorPoint: CGPointMake(0, 0.8)];
         [self addChild: _groundNode];
         
         CGRect groundFrame = [_groundNode frame];
@@ -57,16 +57,6 @@
         [groundBody setCollisionBitMask: VZBubbleMask];
         
         [_groundNode setPhysicsBody: groundBody];
-        
-        for (NSInteger iLooper = 0; iLooper < 10; ++iLooper)
-        {
-            VZBubbleNode *node = [[VZBubbleNode alloc] initWithSceneSize:
-                                  size currentNumber: 7];
-            
-            [_bubbles addObject: node];
-            
-            [self addChild: node];
-        }
         
         [self setTouchNode: [VZScene emmitterNode]];
         [_touchNode setTargetNode: self];
@@ -86,17 +76,6 @@
 - (void)update: (CFTimeInterval)currentTime
 {
     
-}
-
-- (void)enterLevel: (NSInteger)index
-              info: (NSDictionary *)info
-{
-    
-}
-
-- (NSDictionary *)levelInfoAtIndex: (NSInteger)index
-{
-    return [[QGDataService service] levelWithIndex: index];
 }
 
 - (void)didBeginContact: (SKPhysicsContact *)contact
@@ -130,11 +109,11 @@
         VZBubbleNode *newBubble = [bubbleNode split];
         if (newBubble)
         {
-//            [self addChild: newBubble];
-//            [newBubble setPosition: CGPointMake(320, 300)];
-//            [newBubble runAction: [SKAction moveByX: 30
-//                                                  y: 30
-//                                           duration: 0.5]];
+            //            [self addChild: newBubble];
+            //            [newBubble setPosition: CGPointMake(320, 300)];
+            //            [newBubble runAction: [SKAction moveByX: 30
+            //                                                  y: 30
+            //                                           duration: 0.5]];
             [_bubbles addObject: newBubble];
         }
     }
@@ -169,6 +148,38 @@
                             {
                                 [_touchNode setTargetNode: nil];
                             })];
+}
+
+- (void)startGameWithNumber: (NSInteger)number
+{
+    [self setCurrentNumber: number];
+    
+    CGSize size = [self size];
+    
+    for (NSInteger iLooper = 0; iLooper < 10; ++iLooper)
+    {
+        VZBubbleNode *node = [[VZBubbleNode alloc] initWithSceneSize: size
+                                                       currentNumber: number];
+        
+        [_bubbles addObject: node];
+        
+        [self addChild: node];
+    }
+}
+
+- (void)restartGame
+{
+    CGSize size = [self size];
+    
+    for (VZBubbleNode *node in _bubbles)
+    {
+        NSInteger randNumber = random();
+        [node setPosition: CGPointMake(15 + randNumber % (NSInteger)(size.width - 15 * 2),
+                                       size.height + 50 + 10 * (randNumber % 10))];
+        
+    }
+    
+    [self setPaused: NO];
 }
 
 @end

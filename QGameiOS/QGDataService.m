@@ -36,25 +36,7 @@
 {
     if ((self = [super init]))
     {
-        NSError *error = nil;
-        NSString *str = [NSString stringWithContentsOfFile: [[NSBundle mainBundle] pathForResource: @"levels"
-                                                                                            ofType: @"json"]
-                                                  encoding: NSUTF8StringEncoding
-                                                     error: &error];
-        if (error)
-        {
-            NSLog(@"%@", error);
-        }
         
-        error = nil;
-        
-        _levels = [NSJSONSerialization JSONObjectWithData: [str dataUsingEncoding: NSUTF8StringEncoding]
-                                                  options: 0
-                                                    error: &error];
-        if (error)
-        {
-            NSLog(@"%@", error);
-        }
     }
     
     return self;

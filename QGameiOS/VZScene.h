@@ -45,9 +45,10 @@ didBreakBubble: (VZBubbleNode *)bubble;
 
 @property (nonatomic, weak) id<QGSceneDelegate> delegate;
 
-- (void)enterLevel: (NSInteger)index
-              info: (NSDictionary *)info;
+@property (nonatomic) NSInteger currentNumber;
 
-- (NSDictionary *)levelInfoAtIndex: (NSInteger)index;
+- (void)startGameWithNumber: (NSInteger)number;
+
+- (void)restartGame;
 
 @end

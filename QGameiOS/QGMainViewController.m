@@ -36,7 +36,6 @@
                      animations: (^
                                   {
                                       [_scrollView setContentOffset: CGPointMake(0, 320)];
-                                      //[_contentView setTransform: CGAffineTransformMakeTranslation(0, -200)];
                                   })];
 }
 
@@ -46,17 +45,16 @@
                      animations: (^
                                   {
                                       [_scrollView setContentOffset: CGPointZero];
-//                                      [_contentView setTransform: CGAffineTransformIdentity];
                                   })];
 
 }
 
-- (IBAction)handlePlayButton: (id)sender
+- (void)_playLevel: (NSInteger)level
 {
     VZGameViewController *gameViewController = [[VZGameViewController alloc] initWithNibName: @"VZGameViewController"
                                                                                       bundle: [NSBundle mainBundle]];
     [[gameViewController view] setAlpha: 0];
-
+    
     [self presentViewController: gameViewController
                        animated: NO
                      completion: nil];
@@ -65,6 +63,11 @@
                                   {
                                       [[gameViewController view] setAlpha: 1];
                                   })];
+}
+
+- (IBAction)handlePlayButton: (id)sender
+{
+    [self _playLevel: 0];
 }
 
 - (void)viewDidLoad
@@ -126,6 +129,16 @@
     [[cell textLabel] setText: [NSString stringWithFormat: @"%ld", idx + 1]];
     
     return cell;
+}
+
+- (void)  collectionView: (UICollectionView *)collectionView
+didSelectItemAtIndexPath: (NSIndexPath *)indexPath
+{
+    NSInteger section = [indexPath section];
+    NSInteger row = [indexPath row];
+    NSInteger idx = section * 5 + row;
+
+    [self _playLevel: idx];    
 }
 
 @end

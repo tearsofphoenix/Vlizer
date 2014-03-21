@@ -24,6 +24,7 @@
 
 @property (nonatomic, strong) VZScene *scene;
 
+@property (weak, nonatomic) IBOutlet UIView *gameLostView;
 @end
 
 @implementation VZGameViewController
@@ -84,9 +85,9 @@
 }
 
 
-- (void)_showNumberView
+- (void)_showNumberViewWith: (NSInteger)number
 {
-    [_preNumberLabel setText: @"6"];
+    [_preNumberLabel setText: [NSString stringWithFormat: @"%ld", (long)number]];
     [UIView animateWithDuration: 0.5
                      animations: (^
                                   {
@@ -104,7 +105,7 @@
                                                        completion: (^(BOOL finished)
                                                                     {
                                                                         //start game
-                                                                        [self _startGame];
+                                                                        [self _startGameWithNumber: number];
                                                                     })];
                                   })];
 }
@@ -114,8 +115,9 @@
     [super viewDidLoad];
     
     [_tutorView setTransform: CGAffineTransformMakeTranslation(0, -768)];
-    [_progressView setMaxNumber: 200];
-    [_progressView setCurrentIndex: 100];
+    
+    [_progressView setMaxNumber: 140];
+    [_progressView setCurrentIndex: 70];
     
 //    [_skview setShowsDrawCount: YES];
 //    [_skview setShowsFPS: YES];
@@ -159,12 +161,16 @@
     
     VZScene *scene = [[VZScene alloc] initWithSize: [_skview bounds].size];
     [scene setDelegate: self];
+    [self setScene: scene];
     
     [_skview presentScene: scene];
+    [self _startGameWithNumber: 7];
 }
 
-- (void)_startGame
+- (void)_startGameWithNumber: (NSInteger)number
 {
+    [_numberLabel setText: [NSString stringWithFormat: @"NUMBER: %ld", (long)number]];
+    [_scene startGameWithNumber: number];
     
 }
 
@@ -178,6 +184,11 @@ didBreakBubble: (VZBubbleNode *)bubble
     {
         //end game
         [_scene setPaused: YES];
+        [UIView animateWithDuration: 0.5
+                         animations: (^
+                                      {
+                                          [_gameLostView setFrame: CGRectMake(20, 142, 280, 255)];
+                                      })];
         //
     }else
     {
@@ -196,6 +207,24 @@ didBreakBubble: (VZBubbleNode *)bubble
     [[self presentingViewController] dismissViewControllerAnimated: NO
                                                         completion: nil];
 }
+
+
+- (IBAction)handleTryAgainEvent: (id)sender
+{
+    [_progressView setCurrentIndex: [_progressView maxNumber] / 2];
+    [_scene restartGame];
+    
+    CGRect frame = [_gameLostView frame];
+    frame.origin.y = -frame.size.height;
+    
+    [UIView animateWithDuration: 0.5
+                     animations: (^
+                                  {
+                                      [_gameLostView setFrame: frame];
+                                  })];
+}
+
+#pragma mark - orientation
 
 - (BOOL)shouldAutorotate
 {
