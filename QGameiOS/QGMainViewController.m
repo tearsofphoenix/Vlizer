@@ -123,7 +123,7 @@
     NSInteger row = [indexPath row];
     NSInteger idx = section * 5 + row;
     
-    [[cell textLabel] setText: [NSString stringWithFormat: @"%d", idx + 1]];
+    [[cell textLabel] setText: [NSString stringWithFormat: @"%ld", idx + 1]];
     
     return cell;
 }

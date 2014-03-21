@@ -9,7 +9,6 @@
             <connections>
                 <outlet property="numberView" destination="Kdc-7l-QeG" id="wT2-L5-90e"/>
                 <outlet property="preNumberLabel" destination="Nm2-7I-fBi" id="KFj-1Y-OjW"/>
-                <outlet property="progressView" destination="KYO-I5-uxB" id="lAi-6n-09J"/>
                 <outlet property="skview" destination="lMG-jT-Abb" id="Gou-7E-Y3u"/>
                 <outlet property="tutorView" destination="faT-aN-iLA" id="fY1-AJ-oBd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -24,16 +23,17 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KYO-I5-uxB">
-                    <rect key="frame" x="10" y="38" width="150" height="2"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </progressView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NUMBER " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99N-01-wBu">
                     <rect key="frame" x="188" y="20" width="117" height="27"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="njC-An-l62" customClass="VZProgressView">
+                    <rect key="frame" x="4" y="24" width="174" height="16"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lMG-jT-Abb" customClass="SKView">
                     <rect key="frame" x="0.0" y="55" width="320" height="457"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

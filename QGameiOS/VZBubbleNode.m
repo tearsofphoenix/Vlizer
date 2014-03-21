@@ -83,7 +83,7 @@ static SKAction *gsLabelAction = nil;
                                                               SKLabelNode *labelNode = [bubbleNode labelNode];
                                                               [labelNode setFontColor: [SKColor redColor]];
                                                               [labelNode setColor: [SKColor redColor]];
-                                                              [labelNode setText: [NSString stringWithFormat: @"-%d", _number]];
+                                                              [labelNode setText: [NSString stringWithFormat: @"-%ld", (long)_number]];
                                                               [labelNode setScale: 1.5];
                                                           })]
          completion: (^
@@ -98,7 +98,7 @@ static SKAction *gsLabelAction = nil;
                           [self setScale: 1.0];
                           
                           _number = randNumber % _currentNumber + 1;
-                          [_labelNode setText: [NSString stringWithFormat: @"%d", _number]];
+                          [_labelNode setText: [NSString stringWithFormat: @"%ld", (long)_number]];
                           [_labelNode setFontColor: [SKColor whiteColor]];
                           [_labelNode setScale: 1];
                           [_labelNode setAlpha: 1];
@@ -111,7 +111,7 @@ static SKAction *gsLabelAction = nil;
     if (_number != number)
     {
         _number = number;
-        [_labelNode setText: [NSString stringWithFormat: @"%d", number]];
+        [_labelNode setText: [NSString stringWithFormat: @"%ld", (long)number]];
     }
 }
 

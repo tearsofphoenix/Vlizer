@@ -9,7 +9,6 @@
 #import "VZScene.h"
 
 #import "QGMusicManager.h"
-#import "SKTexture+RectSubtexture.h"
 #import "QGScene+BuildLevel.h"
 
 #import "QGDataService.h"

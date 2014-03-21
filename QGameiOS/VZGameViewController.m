@@ -34,9 +34,53 @@
     if (self)
     {
         // Custom initialization
+        
+        [[NSNotificationCenter defaultCenter] addObserver: self
+                                                 selector: @selector(_notificationForActive:)
+                                                     name: UIApplicationWillEnterForegroundNotification
+                                                   object: nil];
+        [[NSNotificationCenter defaultCenter] addObserver: self
+                                                 selector: @selector(_notificationForActive:)
+                                                     name: UIApplicationDidBecomeActiveNotification
+                                                   object: nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver: self
+                                                 selector: @selector(_notificationForEnactive)
+                                                     name: UIApplicationDidEnterBackgroundNotification
+                                                   object: nil];
+        [[NSNotificationCenter defaultCenter] addObserver: self
+                                                 selector: @selector(_notificationForEnactive)
+                                                     name: UIApplicationWillResignActiveNotification
+                                                   object: nil];
+        [[NSNotificationCenter defaultCenter] addObserver: self
+                                                 selector: @selector(_notificationForEnactive)
+                                                     name: UIApplicationWillTerminateNotification
+                                                   object: nil];
+//        [[NSNotificationCenter defaultCenter] addObserver: self
+//                                                 selector: @selector(_notificationForTerminate)
+//                                                     name: UIApplicationWillTerminateNotification
+//                                                   object: nil];
     }
     return self;
 }
+
+- (void)_notificationForActive: (NSNotification *)notification
+{
+    [_scene setPaused: NO];
+}
+
+- (void)_notificationForEnactive
+{
+    [_scene setPaused: YES];
+}
+
+- (void)dealloc
+{
+    NSLog(@"in func: %s line: %d", __func__, __LINE__);
+    
+    [[NSNotificationCenter defaultCenter] removeObserver: self];
+}
+
 
 - (void)_showNumberView
 {
@@ -70,9 +114,9 @@
     [_tutorView setTransform: CGAffineTransformMakeTranslation(0, -768)];
     
 //    [_skview setShowsDrawCount: YES];
-    [_skview setShowsFPS: YES];
+//    [_skview setShowsFPS: YES];
 //    [_skview setShowsPhysics: YES];
-    [_skview setShowsNodeCount: YES];
+//    [_skview setShowsNodeCount: YES];
     
 #if 0
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

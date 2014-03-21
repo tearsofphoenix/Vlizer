@@ -21,7 +21,6 @@
 		60EFDC2F18D0A675005F13A9 /* RageIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EFDC2D18D0A675005F13A9 /* RageIAPHelper.m */; };
 		9210218318D17D180071DE17 /* QGMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9210218218D17D180071DE17 /* QGMainViewController.m */; };
 		9210218618D17D590071DE17 /* QGSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9210218518D17D590071DE17 /* QGSettingsView.m */; };
-		92273E6018CFEC3200EC2E25 /* SKTexture+RectSubtexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 92273E5F18CFEC3200EC2E25 /* SKTexture+RectSubtexture.m */; };
 		92273E6B18CFFB6D00EC2E25 /* door.png in Resources */ = {isa = PBXBuildFile; fileRef = 92273E6718CFFB6D00EC2E25 /* door.png */; };
 		92273E6C18CFFB6D00EC2E25 /* key.png in Resources */ = {isa = PBXBuildFile; fileRef = 92273E6818CFFB6D00EC2E25 /* key.png */; };
 		92273E6D18CFFB6D00EC2E25 /* levels.json in Resources */ = {isa = PBXBuildFile; fileRef = 92273E6918CFFB6D00EC2E25 /* levels.json */; };
@@ -52,6 +51,8 @@
 		92A8B38618D93FD300D28DDC /* NSObject+GRExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8B37818D93FD300D28DDC /* NSObject+GRExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		92A8B38718D93FD300D28DDC /* NSString+CMBExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8B37A18D93FD300D28DDC /* NSString+CMBExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		92A8B38818D93FD300D28DDC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8B37C18D93FD300D28DDC /* Reachability.m */; };
+		92C1033518DBE261001C7EFF /* VZProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C1033418DBE261001C7EFF /* VZProgressView.m */; };
+		92C1033818DBE81E001C7EFF /* UIView+GradientBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C1033718DBE81E001C7EFF /* UIView+GradientBackground.m */; };
 		92DC066818CEE5D80005C638 /* QGMusicManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DC066718CEE5D80005C638 /* QGMusicManager.m */; };
 		92F52B7518C85886008BCA12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F52B0118C83BAC008BCA12 /* Foundation.framework */; };
 		92F52B7618C85886008BCA12 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F52B0318C83BAC008BCA12 /* CoreGraphics.framework */; };
@@ -60,7 +61,6 @@
 		92F52B7F18C85886008BCA12 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92F52B7D18C85886008BCA12 /* InfoPlist.strings */; };
 		92F52B8118C85886008BCA12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F52B8018C85886008BCA12 /* main.m */; };
 		92F52B8518C85886008BCA12 /* QGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F52B8418C85886008BCA12 /* QGAppDelegate.m */; };
-		92F52B8E18C85886008BCA12 /* QGGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F52B8D18C85886008BCA12 /* QGGameView.m */; };
 		92F52B9118C85886008BCA12 /* VZScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F52B9018C85886008BCA12 /* VZScene.m */; };
 		92F52B9518C85887008BCA12 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92F52B9418C85887008BCA12 /* Images.xcassets */; };
 /* End PBXBuildFile section */
@@ -94,8 +94,6 @@
 		9210218218D17D180071DE17 /* QGMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGMainViewController.m; sourceTree = "<group>"; };
 		9210218418D17D590071DE17 /* QGSettingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGSettingsView.h; sourceTree = "<group>"; };
 		9210218518D17D590071DE17 /* QGSettingsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGSettingsView.m; sourceTree = "<group>"; };
-		92273E5E18CFEC3200EC2E25 /* SKTexture+RectSubtexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKTexture+RectSubtexture.h"; sourceTree = "<group>"; };
-		92273E5F18CFEC3200EC2E25 /* SKTexture+RectSubtexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKTexture+RectSubtexture.m"; sourceTree = "<group>"; };
 		92273E6718CFFB6D00EC2E25 /* door.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door.png; sourceTree = "<group>"; };
 		92273E6818CFFB6D00EC2E25 /* key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = key.png; sourceTree = "<group>"; };
 		92273E6918CFFB6D00EC2E25 /* levels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = levels.json; sourceTree = "<group>"; };
@@ -144,6 +142,10 @@
 		92A8B37A18D93FD300D28DDC /* NSString+CMBExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CMBExtensions.m"; sourceTree = "<group>"; };
 		92A8B37B18D93FD300D28DDC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		92A8B37C18D93FD300D28DDC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		92C1033318DBE261001C7EFF /* VZProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZProgressView.h; sourceTree = "<group>"; };
+		92C1033418DBE261001C7EFF /* VZProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZProgressView.m; sourceTree = "<group>"; };
+		92C1033618DBE81E001C7EFF /* UIView+GradientBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GradientBackground.h"; sourceTree = "<group>"; };
+		92C1033718DBE81E001C7EFF /* UIView+GradientBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GradientBackground.m"; sourceTree = "<group>"; };
 		92DC066618CEE5D80005C638 /* QGMusicManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGMusicManager.h; sourceTree = "<group>"; };
 		92DC066718CEE5D80005C638 /* QGMusicManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGMusicManager.m; sourceTree = "<group>"; };
 		92F52B0118C83BAC008BCA12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -159,7 +161,6 @@
 		92F52B8318C85886008BCA12 /* QGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QGAppDelegate.h; sourceTree = "<group>"; };
 		92F52B8418C85886008BCA12 /* QGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QGAppDelegate.m; sourceTree = "<group>"; };
 		92F52B8C18C85886008BCA12 /* QGGameView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QGGameView.h; sourceTree = "<group>"; };
-		92F52B8D18C85886008BCA12 /* QGGameView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QGGameView.m; sourceTree = "<group>"; };
 		92F52B8F18C85886008BCA12 /* VZScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VZScene.h; sourceTree = "<group>"; };
 		92F52B9018C85886008BCA12 /* VZScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VZScene.m; sourceTree = "<group>"; };
 		92F52B9418C85887008BCA12 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -256,7 +257,6 @@
 				9210218418D17D590071DE17 /* QGSettingsView.h */,
 				9210218518D17D590071DE17 /* QGSettingsView.m */,
 				92F52B8C18C85886008BCA12 /* QGGameView.h */,
-				92F52B8D18C85886008BCA12 /* QGGameView.m */,
 				9276282118D1A3F80054CE64 /* QGAlertView.h */,
 				9276282218D1A3F80054CE64 /* QGAlertView.m */,
 				92F52B8F18C85886008BCA12 /* VZScene.h */,
@@ -267,6 +267,8 @@
 				9276281C18D19AAE0054CE64 /* QGScene+BuildLevel.m */,
 				60027B3E18D87B62009FCD4A /* QGProductsView.h */,
 				60027B3F18D87B62009FCD4A /* QGProductsView.m */,
+				92C1033318DBE261001C7EFF /* VZProgressView.h */,
+				92C1033418DBE261001C7EFF /* VZProgressView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -351,8 +353,8 @@
 				9249B65F18DAD030000040F6 /* QGMainViewController.xib */,
 				9252DD4218D2B13800C8FDAF /* View */,
 				9252DD4118D2B12E00C8FDAF /* Data */,
-				92273E5E18CFEC3200EC2E25 /* SKTexture+RectSubtexture.h */,
-				92273E5F18CFEC3200EC2E25 /* SKTexture+RectSubtexture.m */,
+				92C1033618DBE81E001C7EFF /* UIView+GradientBackground.h */,
+				92C1033718DBE81E001C7EFF /* UIView+GradientBackground.m */,
 				92F52B9418C85887008BCA12 /* Images.xcassets */,
 				60EFDC2918D0A675005F13A9 /* IAP */,
 				92273E6618CFFB6D00EC2E25 /* Resources */,
@@ -469,20 +471,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92273E6018CFEC3200EC2E25 /* SKTexture+RectSubtexture.m in Sources */,
 				92A8B38518D93FD300D28DDC /* NSData+CMBExtensions.m in Sources */,
 				92DC066818CEE5D80005C638 /* QGMusicManager.m in Sources */,
-				92F52B8E18C85886008BCA12 /* QGGameView.m in Sources */,
 				92F52B8518C85886008BCA12 /* QGAppDelegate.m in Sources */,
 				9249B64518DAC95C000040F6 /* VZTheme.m in Sources */,
 				92F52B9118C85886008BCA12 /* VZScene.m in Sources */,
 				9210218618D17D590071DE17 /* QGSettingsView.m in Sources */,
 				92A8B37F18D93FD300D28DDC /* MFNetworkClient.m in Sources */,
+				92C1033818DBE81E001C7EFF /* UIView+GradientBackground.m in Sources */,
 				9276282318D1A3F80054CE64 /* QGAlertView.m in Sources */,
 				9249B66318DAD514000040F6 /* VZLevelCell.m in Sources */,
 				92A8B38018D93FD300D28DDC /* MFNetworkClientInternal.m in Sources */,
 				9249B66718DADB21000040F6 /* VZGameViewController.m in Sources */,
 				92A8B37E18D93FD300D28DDC /* MFCacheManagerInternal.m in Sources */,
+				92C1033518DBE261001C7EFF /* VZProgressView.m in Sources */,
 				92A8B38618D93FD300D28DDC /* NSObject+GRExtensions.m in Sources */,
 				9210218318D17D180071DE17 /* QGMainViewController.m in Sources */,
 				92F52B8118C85886008BCA12 /* main.m in Sources */,
