@@ -8,10 +8,12 @@
 
 #import "VZGameViewController.h"
 #import "VZScene.h"
+#import "VZProgressView.h"
+#import "VZBubbleNode.h"
 
-@interface VZGameViewController ()
+@interface VZGameViewController ()<QGSceneDelegate>
 
-@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
+@property (weak, nonatomic) IBOutlet VZProgressView *progressView;
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
 @property (weak, nonatomic) IBOutlet SKView *skview;
 
@@ -112,6 +114,8 @@
     [super viewDidLoad];
     
     [_tutorView setTransform: CGAffineTransformMakeTranslation(0, -768)];
+    [_progressView setMaxNumber: 200];
+    [_progressView setCurrentIndex: 100];
     
 //    [_skview setShowsDrawCount: YES];
 //    [_skview setShowsFPS: YES];
@@ -154,12 +158,31 @@
 #endif
     
     VZScene *scene = [[VZScene alloc] initWithSize: [_skview bounds].size];
+    [scene setDelegate: self];
+    
     [_skview presentScene: scene];
 }
 
 - (void)_startGame
 {
     
+}
+
+- (void) scene: (VZScene *)scene
+didBreakBubble: (VZBubbleNode *)bubble
+{
+    NSInteger currentIndex = [_progressView currentIndex];
+    currentIndex -= [bubble number];
+    
+    if (currentIndex <= 0)
+    {
+        //end game
+        [_scene setPaused: YES];
+        //
+    }else
+    {
+        [_progressView setCurrentIndex: currentIndex];
+    }
 }
 
 - (IBAction)handleBackEvent:(id)sender

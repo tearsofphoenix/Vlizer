@@ -37,7 +37,6 @@
 		9252DD4018D2B11C00C8FDAF /* QGDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9252DD3F18D2B11C00C8FDAF /* QGDataService.m */; };
 		9276281418D1855B0054CE64 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 9276281018D1855B0054CE64 /* back.png */; };
 		9276281518D1855B0054CE64 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9276281118D1855B0054CE64 /* back@2x.png */; };
-		9276281D18D19AAE0054CE64 /* QGScene+BuildLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9276281C18D19AAE0054CE64 /* QGScene+BuildLevel.m */; };
 		9276282318D1A3F80054CE64 /* QGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9276282218D1A3F80054CE64 /* QGAlertView.m */; };
 		92A8B37D18D93FD300D28DDC /* MFCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8B36618D93FD300D28DDC /* MFCacheManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		92A8B37E18D93FD300D28DDC /* MFCacheManagerInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8B36818D93FD300D28DDC /* MFCacheManagerInternal.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -114,8 +113,6 @@
 		9252DD3F18D2B11C00C8FDAF /* QGDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGDataService.m; sourceTree = "<group>"; };
 		9276281018D1855B0054CE64 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		9276281118D1855B0054CE64 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
-		9276281B18D19AAE0054CE64 /* QGScene+BuildLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QGScene+BuildLevel.h"; sourceTree = "<group>"; };
-		9276281C18D19AAE0054CE64 /* QGScene+BuildLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "QGScene+BuildLevel.m"; sourceTree = "<group>"; };
 		9276282118D1A3F80054CE64 /* QGAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGAlertView.h; sourceTree = "<group>"; };
 		9276282218D1A3F80054CE64 /* QGAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGAlertView.m; sourceTree = "<group>"; };
 		92A8B36518D93FD300D28DDC /* MFCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCacheManager.h; sourceTree = "<group>"; };
@@ -263,8 +260,6 @@
 				92F52B9018C85886008BCA12 /* VZScene.m */,
 				60027B5C18DB3C4C009FCD4A /* VZBubbleNode.h */,
 				60027B5D18DB3C4C009FCD4A /* VZBubbleNode.m */,
-				9276281B18D19AAE0054CE64 /* QGScene+BuildLevel.h */,
-				9276281C18D19AAE0054CE64 /* QGScene+BuildLevel.m */,
 				60027B3E18D87B62009FCD4A /* QGProductsView.h */,
 				60027B3F18D87B62009FCD4A /* QGProductsView.m */,
 				92C1033318DBE261001C7EFF /* VZProgressView.h */,
@@ -491,7 +486,6 @@
 				92A8B37D18D93FD300D28DDC /* MFCacheManager.m in Sources */,
 				60EFDC2E18D0A675005F13A9 /* IAPHelper.m in Sources */,
 				60027B4818D89920009FCD4A /* UIAlertView+BlockSupport.m in Sources */,
-				9276281D18D19AAE0054CE64 /* QGScene+BuildLevel.m in Sources */,
 				92A8B38118D93FD300D28DDC /* MFNetworkFileCacheManager.m in Sources */,
 				60027B4018D87B62009FCD4A /* QGProductsView.m in Sources */,
 				92A8B38418D93FD300D28DDC /* MFRunLoopOperation.m in Sources */,

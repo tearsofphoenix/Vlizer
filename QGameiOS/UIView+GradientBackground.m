@@ -12,6 +12,7 @@
 @implementation UIView (GradientBackground)
 
 - (void)setGradientBackground: (CGFloat[])colorList
+                    locations: (CGFloat[])locationList
                         count: (NSInteger)count
 {
     @autoreleasepool
@@ -21,7 +22,7 @@
         // Allocate bitmap context
         CGContextRef bitmapContext = CGBitmapContextCreate(NULL, 320, 480, 8, 4 * 320, colorSpace, kCGImageAlphaNoneSkipFirst);
         //allocate myGradient
-        CGFloat locationList[]  = {0.0f, 1.0f};
+//        CGFloat locationList[]  = {0.0f, 1.0f};
 //        CGFloat colorList[]     = {0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f};
         CGGradientRef myGradient   = CGGradientCreateWithColorComponents(colorSpace, colorList, locationList, count);
         // Draw Gradient Here

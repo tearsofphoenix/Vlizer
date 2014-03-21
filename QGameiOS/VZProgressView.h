@@ -10,4 +10,7 @@
 
 @interface VZProgressView : UIView
 
+@property (nonatomic) NSInteger maxNumber;
+@property (nonatomic) NSInteger currentIndex;
+
 @end

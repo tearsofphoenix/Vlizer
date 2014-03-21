@@ -10,7 +10,8 @@
 
 @interface UIView (GradientBackground)
 
-- (void)setGradientBackground: (CGFloat[])colors
+- (void)setGradientBackground: (CGFloat[])colorList
+                    locations: (CGFloat[])locationList
                         count: (NSInteger)count;
 
 @end

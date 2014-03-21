@@ -7,8 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VZGameViewController">
             <connections>
+                <outlet property="numberLabel" destination="99N-01-wBu" id="NEB-Gw-aK9"/>
                 <outlet property="numberView" destination="Kdc-7l-QeG" id="wT2-L5-90e"/>
                 <outlet property="preNumberLabel" destination="Nm2-7I-fBi" id="KFj-1Y-OjW"/>
+                <outlet property="progressView" destination="njC-An-l62" id="RIe-RI-UYw"/>
                 <outlet property="skview" destination="lMG-jT-Abb" id="Gou-7E-Y3u"/>
                 <outlet property="tutorView" destination="faT-aN-iLA" id="fY1-AJ-oBd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -26,7 +28,8 @@
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NUMBER " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99N-01-wBu">
                     <rect key="frame" x="188" y="20" width="117" height="27"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="njC-An-l62" customClass="VZProgressView">

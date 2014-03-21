@@ -10,7 +10,6 @@
 
 @interface VZBubbleNode ()
 
-@property (nonatomic) NSInteger number;
 @property (nonatomic, strong) SKLabelNode *labelNode;
 @property (nonatomic) NSInteger currentNumber;
 

@@ -32,18 +32,12 @@
 #define QGTimeSecondsKey    @"seconds"
 
 @class VZScene;
+@class VZBubbleNode;
 
 @protocol QGSceneDelegate <NSObject>
 
-- (void)didScene: (VZScene *)scene
-    enteredLevel: (NSInteger)index;
-
-- (void)scene: (VZScene *)scene
-  showMessage: (NSString *)message;
-
-- (void)sceneFoundWayOutInCurrentLevel: (VZScene *)scene;
-
-- (void)scenePlayerDieInRiver: (VZScene *)scene;
+- (void) scene: (VZScene *)scene
+didBreakBubble: (VZBubbleNode *)bubble;
 
 @end
 

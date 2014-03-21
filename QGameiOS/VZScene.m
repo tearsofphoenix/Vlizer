@@ -9,7 +9,6 @@
 #import "VZScene.h"
 
 #import "QGMusicManager.h"
-#import "QGScene+BuildLevel.h"
 
 #import "QGDataService.h"
 #import "VZBubbleNode.h"
@@ -119,6 +118,9 @@
         
         [bodyB setVelocity: CGVectorMake(0, 10)];
         [bubbleNode showBreakAnimation];
+        
+        [_delegate scene: self
+          didBreakBubble: bubbleNode];
         
     }else if (([bodyA categoryBitMask] & VZBubbleMask) != 0
               && ([bodyB categoryBitMask] & VZTouchMask) != 0)
