@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "QGScene.h"
+#import "VZScene.h"
 
 #define QGDisableSoundEffect QGPrefix "disable-sound-effect"
 

@@ -7,7 +7,7 @@
 //
 
 #import "QGSettingsView.h"
-#import "QGScene.h"
+#import "VZScene.h"
 #import "QGMusicManager.h"
 #import "VZTheme.h"
 

@@ -61,7 +61,7 @@
 		92F52B8118C85886008BCA12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F52B8018C85886008BCA12 /* main.m */; };
 		92F52B8518C85886008BCA12 /* QGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F52B8418C85886008BCA12 /* QGAppDelegate.m */; };
 		92F52B8E18C85886008BCA12 /* QGGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F52B8D18C85886008BCA12 /* QGGameView.m */; };
-		92F52B9118C85886008BCA12 /* QGScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F52B9018C85886008BCA12 /* QGScene.m */; };
+		92F52B9118C85886008BCA12 /* VZScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F52B9018C85886008BCA12 /* VZScene.m */; };
 		92F52B9518C85887008BCA12 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92F52B9418C85887008BCA12 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -160,8 +160,8 @@
 		92F52B8418C85886008BCA12 /* QGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QGAppDelegate.m; sourceTree = "<group>"; };
 		92F52B8C18C85886008BCA12 /* QGGameView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QGGameView.h; sourceTree = "<group>"; };
 		92F52B8D18C85886008BCA12 /* QGGameView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QGGameView.m; sourceTree = "<group>"; };
-		92F52B8F18C85886008BCA12 /* QGScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QGScene.h; sourceTree = "<group>"; };
-		92F52B9018C85886008BCA12 /* QGScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QGScene.m; sourceTree = "<group>"; };
+		92F52B8F18C85886008BCA12 /* VZScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VZScene.h; sourceTree = "<group>"; };
+		92F52B9018C85886008BCA12 /* VZScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VZScene.m; sourceTree = "<group>"; };
 		92F52B9418C85887008BCA12 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -259,8 +259,8 @@
 				92F52B8D18C85886008BCA12 /* QGGameView.m */,
 				9276282118D1A3F80054CE64 /* QGAlertView.h */,
 				9276282218D1A3F80054CE64 /* QGAlertView.m */,
-				92F52B8F18C85886008BCA12 /* QGScene.h */,
-				92F52B9018C85886008BCA12 /* QGScene.m */,
+				92F52B8F18C85886008BCA12 /* VZScene.h */,
+				92F52B9018C85886008BCA12 /* VZScene.m */,
 				60027B5C18DB3C4C009FCD4A /* VZBubbleNode.h */,
 				60027B5D18DB3C4C009FCD4A /* VZBubbleNode.m */,
 				9276281B18D19AAE0054CE64 /* QGScene+BuildLevel.h */,
@@ -475,7 +475,7 @@
 				92F52B8E18C85886008BCA12 /* QGGameView.m in Sources */,
 				92F52B8518C85886008BCA12 /* QGAppDelegate.m in Sources */,
 				9249B64518DAC95C000040F6 /* VZTheme.m in Sources */,
-				92F52B9118C85886008BCA12 /* QGScene.m in Sources */,
+				92F52B9118C85886008BCA12 /* VZScene.m in Sources */,
 				9210218618D17D590071DE17 /* QGSettingsView.m in Sources */,
 				92A8B37F18D93FD300D28DDC /* MFNetworkClient.m in Sources */,
 				9276282318D1A3F80054CE64 /* QGAlertView.m in Sources */,
@@ -603,7 +603,7 @@
 				INFOPLIST_FILE = "QGameiOS/VlizeriOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = Vlizer;
-				PROVISIONING_PROFILE = "E9670600-840E-483A-8E63-BC69E0D01D18";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -622,7 +622,7 @@
 				INFOPLIST_FILE = "QGameiOS/VlizeriOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = Vlizer;
-				PROVISIONING_PROFILE = "E9670600-840E-483A-8E63-BC69E0D01D18";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

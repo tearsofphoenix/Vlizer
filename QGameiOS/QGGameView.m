@@ -7,7 +7,7 @@
 //
 
 #import "QGGameView.h"
-#import "QGScene.h"
+#import "VZScene.h"
 
 #import "QGAlertView.h"
 #import "QGMusicManager.h"
@@ -63,7 +63,7 @@
         [view addSubview: _messageLabel];
         
         // Create and configure the scene.
-        QGScene * scene = [QGScene sceneWithSize: [self bounds].size];
+        VZScene * scene = [VZScene sceneWithSize: [self bounds].size];
         
         [scene setScaleMode: SKSceneScaleModeAspectFill];
         [scene setDelegate: self];
@@ -131,7 +131,7 @@
     [label setFrame: frame];
 }
 
-- (void)didScene: (QGScene *)scene
+- (void)didScene: (VZScene *)scene
     enteredLevel: (NSInteger)index
 {
     NSDictionary *info = [scene levelInfoAtIndex: index];
@@ -145,13 +145,13 @@
 
 }
 
-- (void)scene: (QGScene *)scene
+- (void)scene: (VZScene *)scene
   showMessage: (NSString *)message
 {
     [_messageLabel setText: message];
 }
 
-- (void)sceneFoundWayOutInCurrentLevel: (QGScene *)scene
+- (void)sceneFoundWayOutInCurrentLevel: (VZScene *)scene
 {
     
 }
@@ -176,12 +176,12 @@
 - (void)enterLevel: (NSInteger)index
               info: (NSDictionary *)info
 {
-    QGScene * scene = (QGScene *)[self scene];
+    VZScene * scene = (VZScene *)[self scene];
     [scene enterLevel: index
                  info: info];
 }
 
-- (void)scenePlayerDieInRiver: (QGScene *)scene
+- (void)scenePlayerDieInRiver: (VZScene *)scene
 {
     [[QGMusicManager manager] playAudio: @"splash"
                               loopCount: 0];

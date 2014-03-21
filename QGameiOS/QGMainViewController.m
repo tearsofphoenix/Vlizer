@@ -14,7 +14,7 @@
 #import "QGDataService.h"
 #import "RageIAPHelper.h"
 #import "UIAlertView+BlockSupport.h"
-#import "QGScene.h"
+#import "VZScene.h"
 #import "QGProductsView.h"
 #import "VZTheme.h"
 #import "VZLevelCell.h"

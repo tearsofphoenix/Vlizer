@@ -7,7 +7,7 @@
 //
 
 #import "VZGameViewController.h"
-#import "QGScene.h"
+#import "VZScene.h"
 
 @interface VZGameViewController ()
 
@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *preNumberLabel;
 @property (weak, nonatomic) IBOutlet UIView *numberView;
 
-@property (nonatomic, strong) QGScene *scene;
+@property (nonatomic, strong) VZScene *scene;
 
 @end
 
@@ -109,7 +109,7 @@
     }
 #endif
     
-    QGScene *scene = [[QGScene alloc] initWithSize: [_skview bounds].size];
+    VZScene *scene = [[VZScene alloc] initWithSize: [_skview bounds].size];
     [_skview presentScene: scene];
 }
 
@@ -128,6 +128,24 @@
     
     [[self presentingViewController] dismissViewControllerAnimated: NO
                                                         completion: nil];
+}
+
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+    {
+        return UIInterfaceOrientationMaskAllButUpsideDown;
+    } else
+    {
+        return UIInterfaceOrientationMaskAll;
+    }
 }
 
 - (BOOL)prefersStatusBarHidden

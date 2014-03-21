@@ -31,23 +31,23 @@
 #define QGMovesKey          @"moves"
 #define QGTimeSecondsKey    @"seconds"
 
-@class QGScene;
+@class VZScene;
 
 @protocol QGSceneDelegate <NSObject>
 
-- (void)didScene: (QGScene *)scene
+- (void)didScene: (VZScene *)scene
     enteredLevel: (NSInteger)index;
 
-- (void)scene: (QGScene *)scene
+- (void)scene: (VZScene *)scene
   showMessage: (NSString *)message;
 
-- (void)sceneFoundWayOutInCurrentLevel: (QGScene *)scene;
+- (void)sceneFoundWayOutInCurrentLevel: (VZScene *)scene;
 
-- (void)scenePlayerDieInRiver: (QGScene *)scene;
+- (void)scenePlayerDieInRiver: (VZScene *)scene;
 
 @end
 
-@interface QGScene : SKScene
+@interface VZScene : SKScene
 
 @property (nonatomic, weak) id<QGSceneDelegate> delegate;
 

@@ -6,13 +6,13 @@
 //  Copyright (c) 2014年 Mac003. All rights reserved.
 //
 
-#import "QGScene.h"
+#import "VZScene.h"
 
-@interface QGScene (BuildLevel)
+@interface VZScene (BuildLevel)
 
 - (CGFloat)widthForCurrentLevel: (NSDictionary *)info;
 
-- (void)buildWordForScene: (QGScene *)scene
+- (void)buildWordForScene: (VZScene *)scene
                     level: (NSInteger)index
              initLocation: (NSString *)str;
 

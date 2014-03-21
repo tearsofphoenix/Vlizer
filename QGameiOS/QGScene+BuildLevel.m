@@ -8,7 +8,7 @@
 
 #import "QGScene+BuildLevel.h"
 
-@implementation QGScene (BuildLevel)
+@implementation VZScene (BuildLevel)
 
 - (CGFloat)widthForCurrentLevel: (NSDictionary *)info
 {
@@ -22,7 +22,7 @@
     return width;
 }
 
-- (void)buildWordForScene: (QGScene *)scene
+- (void)buildWordForScene: (VZScene *)scene
                     level: (NSInteger)index
              initLocation: (NSString *)locationString
 {

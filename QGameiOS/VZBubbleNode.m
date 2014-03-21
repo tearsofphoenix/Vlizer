@@ -51,7 +51,7 @@ static SKAction *gsLabelAction = nil;
         
         [self setPhysicsBody: body];
         
-        [self setPosition: CGPointMake(randNumber % (NSInteger)size.width, size.height)];
+        [self setPosition: CGPointMake(15 + randNumber % (NSInteger)(size.width - 15 * 2), size.height + 50 + randNumber % 40)];
         
         SKLabelNode *labelNode = [SKLabelNode labelNodeWithFontNamed: @"HelveticaNeue-Light"];
         [self setLabelNode: labelNode];
@@ -97,7 +97,7 @@ static SKAction *gsLabelAction = nil;
                           
                           CGSize size = [[self scene] size];
                           
-                          [self setPosition: CGPointMake(randNumber % (NSInteger)size.width, size.height + 60)];
+                          [self setPosition: CGPointMake(15 + randNumber % (NSInteger)(size.width - 15 * 2), size.height + 50 + randNumber % 40)];
                           [self setAlpha: 1];
                           [self setScale: 1.0];
                       })];

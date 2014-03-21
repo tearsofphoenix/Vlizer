@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 Mac003. All rights reserved.
 //
 
-#import "QGScene.h"
+#import "VZScene.h"
 
 #import "QGMusicManager.h"
 #import "SKTexture+RectSubtexture.h"
@@ -15,7 +15,7 @@
 #import "QGDataService.h"
 #import "VZBubbleNode.h"
 
-@interface QGScene ()<SKPhysicsContactDelegate>
+@interface VZScene ()<SKPhysicsContactDelegate>
 
 @property (nonatomic, strong) NSMutableArray *bubbles;
 @property (nonatomic, strong) SKSpriteNode *groundNode;
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation QGScene
+@implementation VZScene
 
 + (SKEmitterNode *)emmitterNode
 {
@@ -43,7 +43,7 @@
         SKSpriteNode *backgroundNode = [SKSpriteNode spriteNodeWithImageNamed: @"background"];
         [backgroundNode setPosition: CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
         [self addChild: backgroundNode];
-
+        
         [self setGroundNode: [SKSpriteNode spriteNodeWithImageNamed: @"floor"]];
         [_groundNode setAnchorPoint: CGPointMake(0, 0.5)];
         [self addChild: _groundNode];
@@ -69,7 +69,7 @@
             [self addChild: node];
         }
         
-        [self setTouchNode: [QGScene emmitterNode]];
+        [self setTouchNode: [VZScene emmitterNode]];
         [_touchNode setTargetNode: self];
         [self addChild: _touchNode];
     }
@@ -110,14 +110,16 @@
 - (void)touchesBegan: (NSSet *)touches
            withEvent: (UIEvent *)event
 {
-    [self touchesMoved: touches
-             withEvent: event];
+    [_touchNode setHidden: NO];
+    [_touchNode setTargetNode: self];
+    
+    [_touchNode runAction: [SKAction moveTo: [[touches anyObject] locationInNode: self]
+                                   duration: 0.05]];
 }
 
 - (void)touchesMoved: (NSSet *)touches
            withEvent: (UIEvent *)event
 {
-    [_touchNode setAlpha: 1];
     [_touchNode runAction: [SKAction moveTo: [[touches anyObject] locationInNode: self]
                                    duration: 0.05]];
 }
@@ -125,7 +127,15 @@
 - (void)touchesEnded: (NSSet *)touches
            withEvent: (UIEvent *)event
 {
-    [_touchNode setAlpha: 0];
+    [_touchNode runAction: [SKAction customActionWithDuration: 0.2
+                                                  actionBlock: (^(SKNode *node, CGFloat elapsedTime)
+                                                                {
+                                                                    [_touchNode setHidden: YES];
+                                                                })]
+               completion: (^
+                            {
+                                [_touchNode setTargetNode: nil];
+                            })];
 }
 
 @end
