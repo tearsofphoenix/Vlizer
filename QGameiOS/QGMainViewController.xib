@@ -97,6 +97,10 @@
                         </view>
                     </subviews>
                 </scrollView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vlizer.png" translatesAutoresizingMaskIntoConstraints="NO" id="OEW-yj-KoZ">
+                    <rect key="frame" x="70" y="105" width="180" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -105,5 +109,6 @@
     </objects>
     <resources>
         <image name="background.png" width="320" height="568"/>
+        <image name="vlizer.png" width="180" height="50"/>
     </resources>
 </document>

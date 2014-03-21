@@ -115,6 +115,7 @@
     [super viewDidLoad];
     
     [_tutorView setTransform: CGAffineTransformMakeTranslation(0, -768)];
+    [[_gameLostView layer] setCornerRadius: 10];
     
     [_progressView setMaxNumber: 140];
     [_progressView setCurrentIndex: 70];

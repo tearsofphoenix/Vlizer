@@ -38,6 +38,8 @@
 		9276281418D1855B0054CE64 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 9276281018D1855B0054CE64 /* back.png */; };
 		9276281518D1855B0054CE64 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9276281118D1855B0054CE64 /* back@2x.png */; };
 		9276282318D1A3F80054CE64 /* QGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9276282218D1A3F80054CE64 /* QGAlertView.m */; };
+		927CFA3B18DC21C4003F1F68 /* vlizer.png in Resources */ = {isa = PBXBuildFile; fileRef = 927CFA3918DC21C4003F1F68 /* vlizer.png */; };
+		927CFA3C18DC21C4003F1F68 /* vlizer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 927CFA3A18DC21C4003F1F68 /* vlizer@2x.png */; };
 		92A8B37D18D93FD300D28DDC /* MFCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8B36618D93FD300D28DDC /* MFCacheManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		92A8B37E18D93FD300D28DDC /* MFCacheManagerInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8B36818D93FD300D28DDC /* MFCacheManagerInternal.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		92A8B37F18D93FD300D28DDC /* MFNetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A8B36A18D93FD300D28DDC /* MFNetworkClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -115,6 +117,8 @@
 		9276281118D1855B0054CE64 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		9276282118D1A3F80054CE64 /* QGAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGAlertView.h; sourceTree = "<group>"; };
 		9276282218D1A3F80054CE64 /* QGAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGAlertView.m; sourceTree = "<group>"; };
+		927CFA3918DC21C4003F1F68 /* vlizer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vlizer.png; sourceTree = "<group>"; };
+		927CFA3A18DC21C4003F1F68 /* vlizer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vlizer@2x.png"; sourceTree = "<group>"; };
 		92A8B36518D93FD300D28DDC /* MFCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCacheManager.h; sourceTree = "<group>"; };
 		92A8B36618D93FD300D28DDC /* MFCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFCacheManager.m; sourceTree = "<group>"; };
 		92A8B36718D93FD300D28DDC /* MFCacheManagerInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCacheManagerInternal.h; sourceTree = "<group>"; };
@@ -219,6 +223,8 @@
 		92273E6618CFFB6D00EC2E25 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				927CFA3918DC21C4003F1F68 /* vlizer.png */,
+				927CFA3A18DC21C4003F1F68 /* vlizer@2x.png */,
 				60027B4918DB0008009FCD4A /* web */,
 				9249B63F18DAC759000040F6 /* background.png */,
 				9249B64018DAC759000040F6 /* background@2x.png */,
@@ -456,6 +462,8 @@
 				9249B64218DAC759000040F6 /* background@2x.png in Resources */,
 				92F52B7F18C85886008BCA12 /* InfoPlist.strings in Resources */,
 				92273E8118D0342400EC2E25 /* message.png in Resources */,
+				927CFA3C18DC21C4003F1F68 /* vlizer@2x.png in Resources */,
+				927CFA3B18DC21C4003F1F68 /* vlizer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
