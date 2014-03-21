@@ -12,6 +12,7 @@
 
 @property (nonatomic) NSInteger number;
 @property (nonatomic, strong) SKLabelNode *labelNode;
+@property (nonatomic) NSInteger currentNumber;
 
 @end
 
@@ -33,11 +34,14 @@ static SKAction *gsLabelAction = nil;
 }
 
 - (id)initWithSceneSize: (CGSize)size
+          currentNumber: (NSInteger)currentNumber
 {
     if ((self = [super initWithImageNamed: @"bubble_back"]))
     {
+        [self setCurrentNumber: currentNumber];
+        
         int randNumber = rand();
-        NSInteger speed = randNumber % 7 + 10;
+        NSInteger speed = randNumber % _currentNumber + 10;
         
         [self setSize: CGSizeMake(30, 30)];
         SKPhysicsBody *body = [SKPhysicsBody bodyWithCircleOfRadius: 15];
@@ -58,7 +62,7 @@ static SKAction *gsLabelAction = nil;
         [labelNode setVerticalAlignmentMode: SKLabelVerticalAlignmentModeCenter];
         [labelNode setHorizontalAlignmentMode: SKLabelHorizontalAlignmentModeCenter];
         
-        NSInteger number = rand() % 7 + 1;
+        NSInteger number = randNumber % _currentNumber + 1;
         [self setNumber: number];
         [self addChild: labelNode];
     }
@@ -70,29 +74,21 @@ static SKAction *gsLabelAction = nil;
 {
     NSInteger randNumber = rand();
     
-    [_labelNode runAction: [SKAction customActionWithDuration: 0.6
-                                                  actionBlock: (^(SKNode *node, CGFloat elapsedTime)
-                                                                {
-                                                                    SKLabelNode *labelNode = (SKLabelNode *)node;
-                                                                    [labelNode setFontColor: [SKColor redColor]];
-                                                                    [labelNode setColor: [SKColor redColor]];
-                                                                    [labelNode setText: [NSString stringWithFormat: @"-%d", _number]];
-                                                                    [labelNode setScale: 1.5];
-                                                                    //                                                                    [labelNode setAlpha: 0];
-                                                                })]
-               completion: (^
-                            {
-                                _number = randNumber % 7 + 1;
-                                [_labelNode setText: [NSString stringWithFormat: @"%d", _number]];
-                                [_labelNode setFontColor: [SKColor whiteColor]];
-                                [_labelNode setScale: 1];
-                                [_labelNode setAlpha: 1];
-                            })];
-    
-    [self runAction: gsBreakAction
+    [self runAction: [SKAction customActionWithDuration: 0.6
+                                            actionBlock: (^(SKNode *node, CGFloat elapsedTime)
+                                                          {
+                                                              VZBubbleNode *bubbleNode = (VZBubbleNode *)node;
+                                                              [bubbleNode setScale: 1.5];
+                                                              
+                                                              SKLabelNode *labelNode = [bubbleNode labelNode];
+                                                              [labelNode setFontColor: [SKColor redColor]];
+                                                              [labelNode setColor: [SKColor redColor]];
+                                                              [labelNode setText: [NSString stringWithFormat: @"-%d", _number]];
+                                                              [labelNode setScale: 1.5];
+                                                          })]
          completion: (^
                       {
-                          NSInteger speed = randNumber % 7 + 10;
+                          NSInteger speed = randNumber % _currentNumber + 10;
                           [[self physicsBody] setVelocity: CGVectorMake(0, -speed)];
                           
                           CGSize size = [[self scene] size];
@@ -100,6 +96,12 @@ static SKAction *gsLabelAction = nil;
                           [self setPosition: CGPointMake(15 + randNumber % (NSInteger)(size.width - 15 * 2), size.height + 50 + randNumber % 40)];
                           [self setAlpha: 1];
                           [self setScale: 1.0];
+                          
+                          _number = randNumber % _currentNumber + 1;
+                          [_labelNode setText: [NSString stringWithFormat: @"%d", _number]];
+                          [_labelNode setFontColor: [SKColor whiteColor]];
+                          [_labelNode setScale: 1];
+                          [_labelNode setAlpha: 1];
                       })];
     
 }
@@ -129,7 +131,8 @@ static SKAction *gsLabelAction = nil;
         NSLog(@"%@", NSStringFromCGPoint(position));
         
         NSInteger numberA = rand() % (_number - 1) + 1;
-        VZBubbleNode *nodeA = [[VZBubbleNode alloc] initWithSceneSize: size];
+        VZBubbleNode *nodeA = [[VZBubbleNode alloc] initWithSceneSize: size
+                                                        currentNumber: _currentNumber];
         [nodeA setNumber: numberA];
         [nodeA setPosition: position];
 

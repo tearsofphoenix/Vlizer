@@ -19,7 +19,8 @@ typedef uint32_t VZConcatMask;
 
 @interface VZBubbleNode : SKSpriteNode
 
-- (id)initWithSceneSize: (CGSize)size;
+- (id)initWithSceneSize: (CGSize)size
+          currentNumber: (NSInteger)currentNumber;
 
 - (void)showBreakAnimation;
 

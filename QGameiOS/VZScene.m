@@ -62,7 +62,8 @@
         
         for (NSInteger iLooper = 0; iLooper < 10; ++iLooper)
         {
-            VZBubbleNode *node = [[VZBubbleNode alloc] initWithSceneSize: size];
+            VZBubbleNode *node = [[VZBubbleNode alloc] initWithSceneSize:
+                                  size currentNumber: 7];
             
             [_bubbles addObject: node];
             
@@ -128,10 +129,11 @@
         VZBubbleNode *newBubble = [bubbleNode split];
         if (newBubble)
         {
-            [self addChild: newBubble];
-            [newBubble runAction: [SKAction moveByX: 30
-                                                  y: 30
-                                           duration: 0.5]];
+//            [self addChild: newBubble];
+//            [newBubble setPosition: CGPointMake(320, 300)];
+//            [newBubble runAction: [SKAction moveByX: 30
+//                                                  y: 30
+//                                           duration: 0.5]];
             [_bubbles addObject: newBubble];
         }
     }
