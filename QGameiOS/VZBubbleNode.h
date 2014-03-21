@@ -24,11 +24,14 @@ typedef uint32_t VZConcatMask;
 - (id)initWithSceneSize: (CGSize)size
           currentNumber: (NSInteger)currentNumber;
 
+- (void)showSuccessAnimation;
+
 - (void)showBreakAnimation;
 
 - (BOOL)canBeSplit;
 
 - (VZBubbleNode *)split;
 
+- (void)resetNode;
 
 @end

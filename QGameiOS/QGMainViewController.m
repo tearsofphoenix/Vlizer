@@ -30,6 +30,29 @@
 
 @implementation QGMainViewController
 
+- (IBAction)_handleFeedbackEvent: (id)sender
+{
+    NSString *mailString = [NSString stringWithFormat:@"mailto:?to=%@&subject=%@&body=%@",
+							[@"tearsofphoenix@icloud.com" stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding],
+							[@"Feedback of QGame" stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding],
+							[@""  stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
+    
+    NSURL *url = [NSURL URLWithString: mailString];
+    
+    if ([[UIApplication sharedApplication] canOpenURL: url])
+    {
+        [[UIApplication sharedApplication] openURL: [NSURL URLWithString: mailString]];
+    }else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle: nil
+                                                            message: @"Your device does not support email!"
+                                                           delegate: nil
+                                                  cancelButtonTitle: @"OK"
+                                                  otherButtonTitles: nil];
+        [alertView show];
+    }
+}
+
 - (IBAction)handlePickLevelEvent:(id)sender
 {
     [UIView animateWithDuration: 0.5
@@ -76,7 +99,6 @@
  
     [_levelsView registerClass: [VZLevelCell class]
     forCellWithReuseIdentifier: VZCellID];
-//    [_scrollView setBackgroundColor: [UIColor redColor]];
 }
 
 #pragma mark --- orientation

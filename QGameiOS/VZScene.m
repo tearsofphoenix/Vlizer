@@ -13,7 +13,12 @@
 #import "QGDataService.h"
 #import "VZBubbleNode.h"
 
+#define VZBubbleCapacity (12)
+
 @interface VZScene ()<SKPhysicsContactDelegate>
+{
+    CGMutablePathRef _currentPath;
+}
 
 @property (nonatomic, strong) NSMutableArray *bubbles;
 @property (nonatomic, strong) SKSpriteNode *groundNode;
@@ -34,8 +39,8 @@
 {
     if (self = [super initWithSize:size])
     {
-        [self setBubbles: [NSMutableArray arrayWithCapacity: 10]];
-        [[self physicsWorld] setGravity: CGVectorMake(0, -0.025)];
+        [self setBubbles: [NSMutableArray arrayWithCapacity: VZBubbleCapacity]];
+        [[self physicsWorld] setGravity: CGVectorMake(0, -0.02)];
         [[self physicsWorld] setContactDelegate: self];
         
         SKSpriteNode *backgroundNode = [SKSpriteNode spriteNodeWithImageNamed: @"background"];
@@ -60,7 +65,7 @@
         
         [self setTouchNode: [VZScene emmitterNode]];
         [_touchNode setTargetNode: self];
-        SKPhysicsBody *touchBody = [SKPhysicsBody bodyWithCircleOfRadius: 10];
+        SKPhysicsBody *touchBody = [SKPhysicsBody bodyWithCircleOfRadius: 1];
         [touchBody setAffectedByGravity: NO];
         [touchBody setCategoryBitMask: VZTouchMask];
         [touchBody setContactTestBitMask: VZBubbleMask];
@@ -109,12 +114,27 @@
         VZBubbleNode *newBubble = [bubbleNode split];
         if (newBubble)
         {
-            //            [self addChild: newBubble];
-            //            [newBubble setPosition: CGPointMake(320, 300)];
-            //            [newBubble runAction: [SKAction moveByX: 30
-            //                                                  y: 30
-            //                                           duration: 0.5]];
+            [newBubble setPosition: CGPointMake(100, 100)];
+            NSLog(@"in func: %s line: %d %@", __func__, __LINE__, newBubble);
+//            [newBubble runAction: [SKAction moveByX: 30
+//                                                  y: 30
+//                                           duration: 0.5]];
+            
+            [self addChild: newBubble];
             [_bubbles addObject: newBubble];
+            
+            if ([newBubble number] == _currentNumber)
+            {
+                [newBubble showSuccessAnimation];
+                [_delegate scene: self
+                    didGotBubble: newBubble];
+                
+            }else if ([bubbleNode number] == _currentNumber)
+            {
+                [bubbleNode showSuccessAnimation];
+                [_delegate scene: self
+                    didGotBubble: bubbleNode];
+            }
         }
     }
 }
@@ -122,23 +142,109 @@
 - (void)touchesBegan: (NSSet *)touches
            withEvent: (UIEvent *)event
 {
+    if (_currentPath)
+    {
+        CGPathRelease(_currentPath);
+    }
+    
+    CGPoint location = [[touches anyObject] locationInNode: self];
+    _currentPath = CGPathCreateMutable();
+    CGPathMoveToPoint(_currentPath, NULL, location.x, location.y);
+    
     [_touchNode setHidden: NO];
     [_touchNode setTargetNode: self];
     
-    [_touchNode runAction: [SKAction moveTo: [[touches anyObject] locationInNode: self]
+    [_touchNode runAction: [SKAction moveTo: location
                                    duration: 0.05]];
 }
 
 - (void)touchesMoved: (NSSet *)touches
            withEvent: (UIEvent *)event
 {
-    [_touchNode runAction: [SKAction moveTo: [[touches anyObject] locationInNode: self]
+    CGPoint location = [[touches anyObject] locationInNode: self];
+    CGPathAddLineToPoint(_currentPath, NULL, location.x, location.y);
+    
+    [_touchNode runAction: [SKAction moveTo: location
                                    duration: 0.05]];
 }
 
 - (void)touchesEnded: (NSSet *)touches
            withEvent: (UIEvent *)event
 {
+    CGPoint location = [[touches anyObject] locationInNode: self];
+    CGPathAddLineToPoint(_currentPath, NULL, location.x, location.y);
+    CGPathCloseSubpath(_currentPath);
+    
+    NSMutableArray *gatherdNodes = [NSMutableArray array];
+    CGPoint targetPoint = CGPointZero;
+    NSInteger sum = 0;
+    
+    for (VZBubbleNode *nodeLooper in _bubbles)
+    {
+        CGRect frame = [nodeLooper frame];
+        CGPoint center = CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame));
+        
+        if (CGPathContainsPoint(_currentPath, NULL, center, YES))
+        {
+            targetPoint.x += center.x;
+            targetPoint.y += center.y;
+            sum += [nodeLooper number];
+            
+            [gatherdNodes addObject: nodeLooper];
+        }
+    }
+    
+    __block NSInteger gatheredCount = [gatherdNodes count];
+    if (gatheredCount > 1)
+    {
+        //merge bubbles
+        targetPoint.x /= gatheredCount;
+        targetPoint.y /= gatheredCount;
+        
+        NSMutableArray *nodeCopy = [NSMutableArray arrayWithArray: gatherdNodes];
+        
+        SKAction *action = [SKAction moveTo: targetPoint
+                                   duration: 0.5];
+        
+        [self runAction: [SKAction runBlock: (^
+                                              {
+                                                  for (VZBubbleNode *nodeLooper in gatherdNodes)
+                                                  {
+                                                      [nodeLooper runAction: action
+                                                                 completion: (^
+                                                                              {
+                                                                                  [nodeCopy removeObject: nodeLooper];
+                                                                                  //--gatheredCount;
+                                                                                  //if (gatheredCount == 0)
+                                                                                  if ([nodeCopy count] == 0)
+                                                                                  {
+                                                                                      //animation end
+                                                                                      NSLog(@"animation end");
+                                                                                      VZBubbleNode *sumNode = [gatherdNodes firstObject];
+                                                                                      [sumNode setNumber: sum];
+                                                                                      
+                                                                                      //got one!
+                                                                                      if (sum == _currentNumber)
+                                                                                      {
+                                                                                          [sumNode showSuccessAnimation];
+                                                                                          
+                                                                                          [_delegate scene: self
+                                                                                              didGotBubble: sumNode];
+                                                                                      }
+                                                                                      
+                                                                                      [gatherdNodes enumerateObjectsUsingBlock: (^(VZBubbleNode *obj, NSUInteger idx, BOOL *stop)
+                                                                                                                                 {
+                                                                                                                                     if (idx > 0)
+                                                                                                                                     {
+                                                                                                                                         [obj resetNode];
+                                                                                                                                     }
+                                                                                                                                 })];
+                                                                                  }
+                                                                              })];
+                                                  }
+                                              })]];
+    }
+    
     [_touchNode runAction: [SKAction customActionWithDuration: 0.2
                                                   actionBlock: (^(SKNode *node, CGFloat elapsedTime)
                                                                 {
@@ -156,27 +262,24 @@
     
     CGSize size = [self size];
     
-    for (NSInteger iLooper = 0; iLooper < 10; ++iLooper)
+    if ([_bubbles count] > 0)
     {
-        VZBubbleNode *node = [[VZBubbleNode alloc] initWithSceneSize: size
-                                                       currentNumber: number];
-        
-        [_bubbles addObject: node];
-        
-        [self addChild: node];
-    }
-}
-
-- (void)restartGame
-{
-    CGSize size = [self size];
-    
-    for (VZBubbleNode *node in _bubbles)
+        for (VZBubbleNode *node in _bubbles)
+        {
+            [node setNumber: number];
+            [node resetNode];
+        }
+    }else
     {
-        NSInteger randNumber = random();
-        [node setPosition: CGPointMake(15 + randNumber % (NSInteger)(size.width - 15 * 2),
-                                       size.height + 50 + 10 * (randNumber % 10))];
-        
+        for (NSInteger iLooper = 0; iLooper < VZBubbleCapacity; ++iLooper)
+        {
+            VZBubbleNode *node = [[VZBubbleNode alloc] initWithSceneSize: size
+                                                           currentNumber: number];
+            
+            [_bubbles addObject: node];
+            
+            [self addChild: node];
+        }
     }
     
     [self setPaused: NO];

@@ -39,6 +39,9 @@
 - (void) scene: (VZScene *)scene
 didBreakBubble: (VZBubbleNode *)bubble;
 
+- (void)scene:(VZScene *)scene
+ didGotBubble:(VZBubbleNode *)bubble;
+
 @end
 
 @interface VZScene : SKScene
@@ -48,7 +51,5 @@ didBreakBubble: (VZBubbleNode *)bubble;
 @property (nonatomic) NSInteger currentNumber;
 
 - (void)startGameWithNumber: (NSInteger)number;
-
-- (void)restartGame;
 
 @end

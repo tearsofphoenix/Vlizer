@@ -25,9 +25,25 @@
 @property (nonatomic, strong) VZScene *scene;
 
 @property (weak, nonatomic) IBOutlet UIView *gameLostView;
+@property (weak, nonatomic) IBOutlet UIView *levelDoneView;
 @end
 
 @implementation VZGameViewController
+
+- (IBAction)_handleNextLevelEvent: (id)sender
+{
+    [_progressView setCurrentIndex: [_progressView maxNumber] / 2];
+    [_scene startGameWithNumber: 8];
+    
+    CGRect frame = [_levelDoneView frame];
+    frame.origin.y = -frame.size.height;
+    
+    [UIView animateWithDuration: 0.5
+                     animations: (^
+                                  {
+                                      [_levelDoneView setFrame: frame];
+                                  })];
+}
 
 - (id)initWithNibName: (NSString *)nibNameOrNil
                bundle: (NSBundle *)nibBundleOrNil
@@ -197,6 +213,29 @@ didBreakBubble: (VZBubbleNode *)bubble
     }
 }
 
+- (void)scene: (VZScene *)scene
+ didGotBubble: (VZBubbleNode *)bubble
+{
+    NSInteger currentIndex = [_progressView currentIndex];
+    currentIndex += [bubble number];
+    
+    if (currentIndex >= [_progressView maxNumber])
+    {
+        //success current level
+        //
+        [_scene setPaused: YES];
+        [UIView animateWithDuration: 0.5
+                         animations: (^
+                                      {
+                                          [_levelDoneView setFrame: CGRectMake(20, 142, 280, 255)];
+                                      })];
+        //
+    }else
+    {
+        [_progressView setCurrentIndex: currentIndex];
+    }
+}
+
 - (IBAction)handleBackEvent:(id)sender
 {
     [UIView animateWithDuration: 0.5
@@ -213,7 +252,7 @@ didBreakBubble: (VZBubbleNode *)bubble
 - (IBAction)handleTryAgainEvent: (id)sender
 {
     [_progressView setCurrentIndex: [_progressView maxNumber] / 2];
-    [_scene restartGame];
+    [_scene startGameWithNumber: [_scene currentNumber]];
     
     CGRect frame = [_gameLostView frame];
     frame.origin.y = -frame.size.height;
