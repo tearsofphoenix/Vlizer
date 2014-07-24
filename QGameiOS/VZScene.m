@@ -23,6 +23,7 @@
 @property (nonatomic, strong) NSMutableArray *bubbles;
 @property (nonatomic, strong) SKSpriteNode *groundNode;
 @property (nonatomic, strong) SKEmitterNode *touchNode;
+@property (nonatomic) BOOL fingerMoving;
 
 @end
 
@@ -99,14 +100,18 @@
         && ([bodyB categoryBitMask] & VZBubbleMask) != 0)
     {
         VZBubbleNode *bubbleNode = (VZBubbleNode *)[bodyB node];
+        if (![bubbleNode isBreaking])
+        {
+            [bubbleNode showBreakAnimation];
+            
+            NSLog(@"line: %d %p %@", __LINE__, bubbleNode, bubbleNode);
+            
+            [_delegate scene: self
+              didBreakBubble: bubbleNode];
+        }
         
-        [bodyB setVelocity: CGVectorMake(0, 10)];
-        [bubbleNode showBreakAnimation];
-        
-        [_delegate scene: self
-          didBreakBubble: bubbleNode];
-        
-    }else if (([bodyA categoryBitMask] & VZBubbleMask) != 0
+    }else if (_fingerMoving
+              && ([bodyA categoryBitMask] & VZBubbleMask) != 0
               && ([bodyB categoryBitMask] & VZTouchMask) != 0)
     {
         //try to split
@@ -121,7 +126,7 @@
             [self addChild: newBubble];
             [newBubble setPosition: [bubbleNode position]];
 
-            NSLog(@"in func: %s line: %d %@ %@", __func__, __LINE__, newBubble, bubbleNode);
+            NSLog(@"line: %d %p %@", __LINE__, newBubble, newBubble);
 
             [_bubbles addObject: newBubble];
             
@@ -151,6 +156,8 @@
         CGPathRelease(_currentPath);
     }
     
+    _fingerMoving = YES;
+    
     CGPoint location = [[touches anyObject] locationInNode: self];
     _currentPath = CGPathCreateMutable();
     CGPathMoveToPoint(_currentPath, NULL, location.x, location.y);
@@ -175,6 +182,8 @@
 - (void)touchesEnded: (NSSet *)touches
            withEvent: (UIEvent *)event
 {
+    _fingerMoving = NO;
+    
     CGPoint location = [[touches anyObject] locationInNode: self];
     CGPathAddLineToPoint(_currentPath, NULL, location.x, location.y);
     CGPathCloseSubpath(_currentPath);

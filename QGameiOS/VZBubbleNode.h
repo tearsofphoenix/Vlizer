@@ -20,6 +20,7 @@ typedef uint32_t VZConcatMask;
 @interface VZBubbleNode : SKSpriteNode
 
 @property (nonatomic) NSInteger number;
+@property (nonatomic, getter = isBreaking) BOOL breaking;
 
 - (id)initWithSceneSize: (CGSize)size
           currentNumber: (NSInteger)currentNumber;

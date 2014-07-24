@@ -121,6 +121,8 @@ static SKAction *gsLabelAction = nil;
 
 - (void)showBreakAnimation
 {
+    [self setBreaking: YES];
+    
     [self runAction: [SKAction customActionWithDuration: 0.6
                                             actionBlock: (^(SKNode *node, CGFloat elapsedTime)
                                                           {
@@ -138,6 +140,8 @@ static SKAction *gsLabelAction = nil;
                                                           })]
          completion: (^
                       {
+                          [self setBreaking: NO];
+                          
                           NSInteger randNumber = rand();
 
                           NSInteger speed = randNumber % _currentNumber + 10;
@@ -192,7 +196,7 @@ static SKAction *gsLabelAction = nil;
     return nil;
 }
 
-- (NSString *)debugDescription
+- (NSString *)description
 {
     return [NSString stringWithFormat: @"%@ num: %ld",  [super description], (long)_currentNumber];
 }
