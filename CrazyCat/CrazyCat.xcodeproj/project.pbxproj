@@ -1,0 +1,313 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		92EC2CD5198107FC001E7FBE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92EC2CD4198107FC001E7FBE /* Foundation.framework */; };
+		92EC2CD7198107FC001E7FBE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92EC2CD6198107FC001E7FBE /* CoreGraphics.framework */; };
+		92EC2CD9198107FC001E7FBE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92EC2CD8198107FC001E7FBE /* UIKit.framework */; };
+		92EC2CDF198107FC001E7FBE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92EC2CDD198107FC001E7FBE /* InfoPlist.strings */; };
+		92EC2CE1198107FC001E7FBE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92EC2CE0198107FC001E7FBE /* main.m */; };
+		92EC2CE5198107FC001E7FBE /* VMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92EC2CE4198107FC001E7FBE /* VMAppDelegate.m */; };
+		92EC2CEB198107FC001E7FBE /* VMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92EC2CEA198107FC001E7FBE /* VMViewController.m */; };
+		92EC2CED198107FC001E7FBE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92EC2CEC198107FC001E7FBE /* Images.xcassets */; };
+		92EC2D0A19810819001E7FBE /* sjm in Resources */ = {isa = PBXBuildFile; fileRef = 92EC2D0919810819001E7FBE /* sjm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		92EC2CD1198107FC001E7FBE /* CrazyCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrazyCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92EC2CD4198107FC001E7FBE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		92EC2CD6198107FC001E7FBE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		92EC2CD8198107FC001E7FBE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		92EC2CDC198107FC001E7FBE /* CrazyCat-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CrazyCat-Info.plist"; sourceTree = "<group>"; };
+		92EC2CDE198107FC001E7FBE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		92EC2CE0198107FC001E7FBE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		92EC2CE2198107FC001E7FBE /* CrazyCat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CrazyCat-Prefix.pch"; sourceTree = "<group>"; };
+		92EC2CE3198107FC001E7FBE /* VMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VMAppDelegate.h; sourceTree = "<group>"; };
+		92EC2CE4198107FC001E7FBE /* VMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VMAppDelegate.m; sourceTree = "<group>"; };
+		92EC2CE9198107FC001E7FBE /* VMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VMViewController.h; sourceTree = "<group>"; };
+		92EC2CEA198107FC001E7FBE /* VMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VMViewController.m; sourceTree = "<group>"; };
+		92EC2CEC198107FC001E7FBE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		92EC2CF3198107FC001E7FBE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		92EC2D0919810819001E7FBE /* sjm */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sjm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		92EC2CCE198107FC001E7FBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92EC2CD7198107FC001E7FBE /* CoreGraphics.framework in Frameworks */,
+				92EC2CD9198107FC001E7FBE /* UIKit.framework in Frameworks */,
+				92EC2CD5198107FC001E7FBE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		92EC2CC8198107FC001E7FBE = {
+			isa = PBXGroup;
+			children = (
+				92EC2CDA198107FC001E7FBE /* CrazyCat */,
+				92EC2CD3198107FC001E7FBE /* Frameworks */,
+				92EC2CD2198107FC001E7FBE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		92EC2CD2198107FC001E7FBE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92EC2CD1198107FC001E7FBE /* CrazyCat.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92EC2CD3198107FC001E7FBE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92EC2CD4198107FC001E7FBE /* Foundation.framework */,
+				92EC2CD6198107FC001E7FBE /* CoreGraphics.framework */,
+				92EC2CD8198107FC001E7FBE /* UIKit.framework */,
+				92EC2CF3198107FC001E7FBE /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92EC2CDA198107FC001E7FBE /* CrazyCat */ = {
+			isa = PBXGroup;
+			children = (
+				92EC2D0919810819001E7FBE /* sjm */,
+				92EC2CE3198107FC001E7FBE /* VMAppDelegate.h */,
+				92EC2CE4198107FC001E7FBE /* VMAppDelegate.m */,
+				92EC2CE9198107FC001E7FBE /* VMViewController.h */,
+				92EC2CEA198107FC001E7FBE /* VMViewController.m */,
+				92EC2CEC198107FC001E7FBE /* Images.xcassets */,
+				92EC2CDB198107FC001E7FBE /* Supporting Files */,
+			);
+			path = CrazyCat;
+			sourceTree = "<group>";
+		};
+		92EC2CDB198107FC001E7FBE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				92EC2CDC198107FC001E7FBE /* CrazyCat-Info.plist */,
+				92EC2CDD198107FC001E7FBE /* InfoPlist.strings */,
+				92EC2CE0198107FC001E7FBE /* main.m */,
+				92EC2CE2198107FC001E7FBE /* CrazyCat-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		92EC2CD0198107FC001E7FBE /* CrazyCat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92EC2D03198107FC001E7FBE /* Build configuration list for PBXNativeTarget "CrazyCat" */;
+			buildPhases = (
+				92EC2CCD198107FC001E7FBE /* Sources */,
+				92EC2CCE198107FC001E7FBE /* Frameworks */,
+				92EC2CCF198107FC001E7FBE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CrazyCat;
+			productName = CrazyCat;
+			productReference = 92EC2CD1198107FC001E7FBE /* CrazyCat.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		92EC2CC9198107FC001E7FBE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VM;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Mac003;
+			};
+			buildConfigurationList = 92EC2CCC198107FC001E7FBE /* Build configuration list for PBXProject "CrazyCat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 92EC2CC8198107FC001E7FBE;
+			productRefGroup = 92EC2CD2198107FC001E7FBE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				92EC2CD0198107FC001E7FBE /* CrazyCat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		92EC2CCF198107FC001E7FBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92EC2CED198107FC001E7FBE /* Images.xcassets in Resources */,
+				92EC2D0A19810819001E7FBE /* sjm in Resources */,
+				92EC2CDF198107FC001E7FBE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		92EC2CCD198107FC001E7FBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92EC2CE1198107FC001E7FBE /* main.m in Sources */,
+				92EC2CEB198107FC001E7FBE /* VMViewController.m in Sources */,
+				92EC2CE5198107FC001E7FBE /* VMAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		92EC2CDD198107FC001E7FBE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92EC2CDE198107FC001E7FBE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		92EC2D01198107FC001E7FBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		92EC2D02198107FC001E7FBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		92EC2D04198107FC001E7FBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CrazyCat/CrazyCat-Prefix.pch";
+				INFOPLIST_FILE = "CrazyCat/CrazyCat-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		92EC2D05198107FC001E7FBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CrazyCat/CrazyCat-Prefix.pch";
+				INFOPLIST_FILE = "CrazyCat/CrazyCat-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		92EC2CCC198107FC001E7FBE /* Build configuration list for PBXProject "CrazyCat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92EC2D01198107FC001E7FBE /* Debug */,
+				92EC2D02198107FC001E7FBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92EC2D03198107FC001E7FBE /* Build configuration list for PBXNativeTarget "CrazyCat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92EC2D04198107FC001E7FBE /* Debug */,
+				92EC2D05198107FC001E7FBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 92EC2CC9198107FC001E7FBE /* Project object */;
+}
