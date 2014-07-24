@@ -1100,13 +1100,28 @@ this.failPanel.addEventListener("replayEvent",this.doRestart,this)};a.prototype.
  a.prototype.doShare = function(a){
  /*share(this.map.tap,this.isWin)*/
  window.open("crazycat://action?arg=share");
- };a.prototype.doRestart=function(a){this.gameStart(null)};a.prototype.doMore=function(a){showme()};a.prototype.gameStart=function(a){this.map.init();this.cat.init();this.cat.node=this.map.getNode([4,4]);a=this.map.coverPos2Point([4,4]);this.cat.x=a[0];this.cat.y=a[1]+10;this.addChild(this.cat);this.btnStart.parent&&this.removeChild(this.btnStart);
+ };
+ a.prototype.doRestart=function(a){
+ this.gameStart(null)};
+ a.prototype.doMore=function(a){showme()
+ };
+ a.prototype.gameStart = function(a){
+
+ window.open("crazycat://action?arg=start_game");
+ 
+ this.map.init();
+ this.cat.init();
+ this.cat.node=this.map.getNode([4,4]);a=this.map.coverPos2Point([4,4]);this.cat.x=a[0];this.cat.y=a[1]+10;this.addChild(this.cat);this.btnStart.parent&&this.removeChild(this.btnStart);
 this.successPanel.parent&&this.removeChild(this.successPanel);this.failPanel.parent&&this.removeChild(this.failPanel);
  
  this.morebtn.parent&&this.removeChild(this.morebtn);
  
  this.map.unlock();this.isWin=0};a.prototype.onNodeClick=function(a){if(this.map.isExit(this.cat.node))this.showResult(!1);else if(this.map.lock(),a=this.map.findPath(this.cat.node),a.length){a=a[0];var c=this.map.coverPos2Point(a);this.cat.node=this.map.getNode(a);this.cat.run(c)}else this.showResult(!0)};a.prototype.onCatRun=function(a){this.map.unlock()};
-a.prototype.showResult=function(a){a?(this.successPanel.x=(this.stageW-this.successPanel.width)/2,
+a.prototype.showResult=function(a){
+ 
+ window.open("crazycat://action?arg=end_game");
+ 
+ a?(this.successPanel.x=(this.stageW-this.successPanel.width)/2,
                                       this.successPanel.y=(this.stageH-this.successPanel.height-this.morebtn.height)/2,
                                       this.successPanel.score(this.map.tap),
                                       this.addChild(this.successPanel),this.isWin=1):(this.failPanel.x=(this.stageW-this.failPanel.width)/2,this.failPanel.y=(this.stageH-this.failPanel.height-this.morebtn.height)/2,this.successPanel.score(this.map.tap),this.addChild(this.failPanel),this.isWin=2);

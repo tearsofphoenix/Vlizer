@@ -107,8 +107,9 @@ shouldStartLoadWithRequest: (NSURLRequest *)request
     if ([[url scheme] isEqualToString: @"crazycat"])
     {
         NSDictionary *args = [url queryDictionary];
+        NSString *type = args[@"arg"];
         
-        if ([args[@"arg"] isEqualToString: @"share"])
+        if ([type isEqualToString: @"share"])
         {
             WXMediaMessage *message = [WXMediaMessage message];
             
@@ -129,6 +130,14 @@ shouldStartLoadWithRequest: (NSURLRequest *)request
             req.scene = WXSceneTimeline;
             
             [WXApi sendReq:req];
+            
+        }else if ([type isEqualToString: @"start_game"])
+        {
+            [_audioPlayer play];
+            
+        }else if ([type isEqualToString: @"end_game"])
+        {
+            [_audioPlayer stop];
         }
         
         NSLog(@"%@ %@ %@ %@", url, [url scheme], [url host], [url query]);
