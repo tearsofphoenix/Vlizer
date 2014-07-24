@@ -26,12 +26,28 @@
                                          withExtension: @"html"
                                           subdirectory: @"sjm"];
     [_webView loadRequest: [NSURLRequest requestWithURL: URL]];
-    
+    [_webView setDelegate: self];
     [[self view] addSubview: _webView];
 }
 
 - (BOOL)prefersStatusBarHidden
 {
+    return YES;
+}
+
+#pragma mark - delegate
+
+- (BOOL)           webView: (UIWebView *)webView
+shouldStartLoadWithRequest: (NSURLRequest *)request
+            navigationType: (UIWebViewNavigationType)navigationType
+{
+    NSURL *url = [request URL];
+    if ([[url scheme] isEqualToString: @"crazycat"])
+    {
+        NSLog(@"%@ %@ %@ %@", url, [url scheme], [url host], [url query]);
+        return NO;
+    }
+    
     return YES;
 }
 
