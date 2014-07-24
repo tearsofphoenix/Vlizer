@@ -1088,16 +1088,29 @@ var __extends=this.__extends||function(c,e){function d(){this.constructor=c}for(
 "\u6e38\u620f\u52a0\u8f7d\u4e2d..."+c+"/"+a};return e}(egret.Sprite),__extends=this.__extends||function(c,e){function d(){this.constructor=c}for(var a in e)e.hasOwnProperty(a)&&(c[a]=e[a]);d.prototype=e.prototype;c.prototype=new d};
 (function(c){var e=function(d){function a(){d.call(this);this.isWin=0;this.addEventListener(egret.Event.ADDED_TO_STAGE,this.onAddToStage,this)}__extends(a,d);a.prototype.onAddToStage=function(a){this.removeEventListener(egret.Event.ADDED_TO_STAGE,this.onAddToStage,this);this.createGameScene()};a.prototype.createGameScene=function(){this.stageW=this.stage.stageWidth;this.stageH=this.stage.stageHeight;this.map=new c.Map;this.map.init();this.map.x=35;this.map.y=this.stageH-460;this.addChild(this.map);
 this.cat=new c.Cat;this.map.addEventListener("nodeClick",this.onNodeClick,this);this.map.addEventListener("weizhu",this.onWeiZhu,this);this.cat.addEventListener("catRun",this.onCatRun,this);this.btnStart=this.createBitmapByName("btnStart");this.btnStart.x=(this.stageW-this.btnStart.width)/2;this.btnStart.y=(this.stageH-this.btnStart.height)/2;this.btnStart.touchEnabled=!0;this.btnStart.addEventListener(egret.TouchEvent.TOUCH_TAP,this.gameStart,this);this.addChild(this.btnStart);
+ 
  this.morebtn=this.createBitmapByName("more_btn");
-this.morebtn.x=(this.stageW-this.morebtn.width)/2;this.morebtn.y=this.stageH-this.morebtn.height;this.morebtn.touchEnabled=!0;this.morebtn.addEventListener(egret.TouchEvent.TOUCH_TAP,this.doMore,this);
+ this.morebtn.x=(this.stageW-this.morebtn.width)/2;
+ this.morebtn.y=this.stageH-this.morebtn.height;
+ this.morebtn.touchEnabled=!0;
+ this.morebtn.addEventListener(egret.TouchEvent.TOUCH_TAP,this.doMore,this);
+ 
  this.scorePanel=new c.ScorePanel;this.successPanel=new c.SuccessPanel;this.successPanel.addEventListener("shareEvent",this.doShare,this);this.successPanel.addEventListener("replayEvent",this.doRestart,this);this.failPanel=new c.FailPanel;this.failPanel.addEventListener("shareEvent",this.doShare,this);
 this.failPanel.addEventListener("replayEvent",this.doRestart,this)};a.prototype.onWeiZhu=function(a){this.cat.weizhu()};
  a.prototype.doShare = function(a){
  /*share(this.map.tap,this.isWin)*/
  window.open("crazycat://action?arg=share");
  };a.prototype.doRestart=function(a){this.gameStart(null)};a.prototype.doMore=function(a){showme()};a.prototype.gameStart=function(a){this.map.init();this.cat.init();this.cat.node=this.map.getNode([4,4]);a=this.map.coverPos2Point([4,4]);this.cat.x=a[0];this.cat.y=a[1]+10;this.addChild(this.cat);this.btnStart.parent&&this.removeChild(this.btnStart);
-this.successPanel.parent&&this.removeChild(this.successPanel);this.failPanel.parent&&this.removeChild(this.failPanel);this.morebtn.parent&&this.removeChild(this.morebtn);this.map.unlock();this.isWin=0};a.prototype.onNodeClick=function(a){if(this.map.isExit(this.cat.node))this.showResult(!1);else if(this.map.lock(),a=this.map.findPath(this.cat.node),a.length){a=a[0];var c=this.map.coverPos2Point(a);this.cat.node=this.map.getNode(a);this.cat.run(c)}else this.showResult(!0)};a.prototype.onCatRun=function(a){this.map.unlock()};
-a.prototype.showResult=function(a){a?(this.successPanel.x=(this.stageW-this.successPanel.width)/2,this.successPanel.y=(this.stageH-this.successPanel.height-this.morebtn.height)/2,this.successPanel.score(this.map.tap),this.addChild(this.successPanel),this.isWin=1):(this.failPanel.x=(this.stageW-this.failPanel.width)/2,this.failPanel.y=(this.stageH-this.failPanel.height-this.morebtn.height)/2,this.successPanel.score(this.map.tap),this.addChild(this.failPanel),this.isWin=2);this.addChild(this.morebtn)};
+this.successPanel.parent&&this.removeChild(this.successPanel);this.failPanel.parent&&this.removeChild(this.failPanel);
+ 
+ this.morebtn.parent&&this.removeChild(this.morebtn);
+ 
+ this.map.unlock();this.isWin=0};a.prototype.onNodeClick=function(a){if(this.map.isExit(this.cat.node))this.showResult(!1);else if(this.map.lock(),a=this.map.findPath(this.cat.node),a.length){a=a[0];var c=this.map.coverPos2Point(a);this.cat.node=this.map.getNode(a);this.cat.run(c)}else this.showResult(!0)};a.prototype.onCatRun=function(a){this.map.unlock()};
+a.prototype.showResult=function(a){a?(this.successPanel.x=(this.stageW-this.successPanel.width)/2,
+                                      this.successPanel.y=(this.stageH-this.successPanel.height-this.morebtn.height)/2,
+                                      this.successPanel.score(this.map.tap),
+                                      this.addChild(this.successPanel),this.isWin=1):(this.failPanel.x=(this.stageW-this.failPanel.width)/2,this.failPanel.y=(this.stageH-this.failPanel.height-this.morebtn.height)/2,this.successPanel.score(this.map.tap),this.addChild(this.failPanel),this.isWin=2);
+ /*this.addChild(this.morebtn)*/};
 a.prototype.createBitmapByName=function(a){var c=new egret.Bitmap;a=RES.getRes(a);c.texture=a;return c};return a}(egret.DisplayObjectContainer);c.GameContainer=e})(catgame||(catgame={}));
 var __extends=this.__extends||function(c,e){function d(){this.constructor=c}for(var a in e)e.hasOwnProperty(a)&&(c[a]=e[a]);d.prototype=e.prototype;c.prototype=new d},GameApp=function(c){function e(){c.call(this);this.addEventListener(egret.Event.ADDED_TO_STAGE,this.onAddToStage,this)}__extends(e,c);e.prototype.onAddToStage=function(c){this.loadingView=new LoadingUI;this.stage.addChild(this.loadingView);RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE,this.onConfigComplete,this);RES.loadConfig("resource/resource.json",
 "resource/")};e.prototype.onConfigComplete=function(c){RES.removeEventListener(RES.ResourceEvent.CONFIG_COMPLETE,this.onConfigComplete,this);RES.addEventListener(RES.ResourceEvent.GROUP_COMPLETE,this.onResourceLoadComplete,this);RES.addEventListener(RES.ResourceEvent.GROUP_PROGRESS,this.onResourceProgress,this);RES.loadGroup("preload")};e.prototype.onResourceLoadComplete=function(c){"preload"==c.groupName&&(this.stage.removeChild(this.loadingView),RES.removeEventListener(RES.ResourceEvent.GROUP_COMPLETE,
