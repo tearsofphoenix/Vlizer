@@ -11,9 +11,11 @@
 #import "UIDevice+Extensions.h"
 #import "UIImage+SubimageExtraction.h"
 #import "WXApi.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface VMViewController ()<UIWebViewDelegate>
 
+@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @property (nonatomic, strong) UIWebView *webView;
 
 @end
@@ -59,6 +61,42 @@
     UIGraphicsEndImageContext();
     
     return snapshotImage;
+}
+
+- (void)webViewDidFinishLoad: (UIWebView *)webView
+{
+    NSURL *URL = [[NSBundle mainBundle] URLForResource: @"background"
+                                         withExtension: @"mp3"];
+    NSError *error = nil;
+    
+    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL: URL
+                                                          error: &error];
+    if (error)
+    {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+    
+    [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback
+                                           error: &error];
+    
+    if (error)
+    {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+
+    [[AVAudioSession sharedInstance] setActive: YES
+                                         error: &error];
+    
+    if (error)
+    {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    
+    [_audioPlayer setVolume: 0.7];
+    [_audioPlayer setNumberOfLoops: -1];
+    [_audioPlayer play];
 }
 
 - (BOOL)           webView: (UIWebView *)webView

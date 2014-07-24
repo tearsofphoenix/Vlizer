@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60078DB819813557003E68F9 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 60078DB719813557003E68F9 /* background.mp3 */; };
 		6079D533198123F700A16118 /* NSURL+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6079D532198123F700A16118 /* NSURL+Extensions.m */; };
 		6079D5381981259400A16118 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6079D5351981259400A16118 /* libWeChatSDK.a */; };
 		6079D53B198128EB00A16118 /* UIDevice+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6079D53A198128EB00A16118 /* UIDevice+Extensions.m */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		60078DB719813557003E68F9 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
 		6079D531198123F700A16118 /* NSURL+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Extensions.h"; sourceTree = "<group>"; };
 		6079D532198123F700A16118 /* NSURL+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Extensions.m"; sourceTree = "<group>"; };
 		6079D5351981259400A16118 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
@@ -64,6 +66,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		60078DB519813557003E68F9 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				60078DB619813557003E68F9 /* Music */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		60078DB619813557003E68F9 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				60078DB719813557003E68F9 /* background.mp3 */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
 		6079D530198123F700A16118 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +152,7 @@
 		92EC2CDB198107FC001E7FBE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				60078DB519813557003E68F9 /* Resource */,
 				92EC2CDC198107FC001E7FBE /* CrazyCat-Info.plist */,
 				92EC2CDD198107FC001E7FBE /* InfoPlist.strings */,
 				92EC2CE0198107FC001E7FBE /* main.m */,
@@ -195,6 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60078DB819813557003E68F9 /* background.mp3 in Resources */,
 				92EC2CED198107FC001E7FBE /* Images.xcassets in Resources */,
 				92EC2D0A19810819001E7FBE /* sjm in Resources */,
 				92EC2CDF198107FC001E7FBE /* InfoPlist.strings in Resources */,
