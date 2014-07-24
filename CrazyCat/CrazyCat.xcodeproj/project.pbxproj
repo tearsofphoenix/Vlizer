@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6079D533198123F700A16118 /* NSURL+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6079D532198123F700A16118 /* NSURL+Extensions.m */; };
+		6079D5381981259400A16118 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6079D5351981259400A16118 /* libWeChatSDK.a */; };
+		6079D53B198128EB00A16118 /* UIDevice+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6079D53A198128EB00A16118 /* UIDevice+Extensions.m */; };
+		6079D53E198129DE00A16118 /* UIImage+SubimageExtraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 6079D53D198129DE00A16118 /* UIImage+SubimageExtraction.m */; };
 		92EC2CD5198107FC001E7FBE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92EC2CD4198107FC001E7FBE /* Foundation.framework */; };
 		92EC2CD7198107FC001E7FBE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92EC2CD6198107FC001E7FBE /* CoreGraphics.framework */; };
 		92EC2CD9198107FC001E7FBE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92EC2CD8198107FC001E7FBE /* UIKit.framework */; };
@@ -19,6 +23,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6079D531198123F700A16118 /* NSURL+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Extensions.h"; sourceTree = "<group>"; };
+		6079D532198123F700A16118 /* NSURL+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Extensions.m"; sourceTree = "<group>"; };
+		6079D5351981259400A16118 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		6079D5361981259400A16118 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		6079D5371981259400A16118 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		6079D539198128EB00A16118 /* UIDevice+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Extensions.h"; sourceTree = "<group>"; };
+		6079D53A198128EB00A16118 /* UIDevice+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Extensions.m"; sourceTree = "<group>"; };
+		6079D53C198129DE00A16118 /* UIImage+SubimageExtraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SubimageExtraction.h"; sourceTree = "<group>"; };
+		6079D53D198129DE00A16118 /* UIImage+SubimageExtraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SubimageExtraction.m"; sourceTree = "<group>"; };
 		92EC2CD1198107FC001E7FBE /* CrazyCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrazyCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92EC2CD4198107FC001E7FBE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		92EC2CD6198107FC001E7FBE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -43,6 +56,7 @@
 			files = (
 				92EC2CD7198107FC001E7FBE /* CoreGraphics.framework in Frameworks */,
 				92EC2CD9198107FC001E7FBE /* UIKit.framework in Frameworks */,
+				6079D5381981259400A16118 /* libWeChatSDK.a in Frameworks */,
 				92EC2CD5198107FC001E7FBE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,6 +64,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6079D530198123F700A16118 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				6079D53C198129DE00A16118 /* UIImage+SubimageExtraction.h */,
+				6079D53D198129DE00A16118 /* UIImage+SubimageExtraction.m */,
+				6079D539198128EB00A16118 /* UIDevice+Extensions.h */,
+				6079D53A198128EB00A16118 /* UIDevice+Extensions.m */,
+				6079D5341981259400A16118 /* WeiXin */,
+				6079D531198123F700A16118 /* NSURL+Extensions.h */,
+				6079D532198123F700A16118 /* NSURL+Extensions.m */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		6079D5341981259400A16118 /* WeiXin */ = {
+			isa = PBXGroup;
+			children = (
+				6079D5351981259400A16118 /* libWeChatSDK.a */,
+				6079D5361981259400A16118 /* WXApi.h */,
+				6079D5371981259400A16118 /* WXApiObject.h */,
+			);
+			path = WeiXin;
+			sourceTree = "<group>";
+		};
 		92EC2CC8198107FC001E7FBE = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +119,7 @@
 		92EC2CDA198107FC001E7FBE /* CrazyCat */ = {
 			isa = PBXGroup;
 			children = (
+				6079D530198123F700A16118 /* Library */,
 				92EC2D0919810819001E7FBE /* sjm */,
 				92EC2CE3198107FC001E7FBE /* VMAppDelegate.h */,
 				92EC2CE4198107FC001E7FBE /* VMAppDelegate.m */,
@@ -169,9 +208,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6079D533198123F700A16118 /* NSURL+Extensions.m in Sources */,
 				92EC2CE1198107FC001E7FBE /* main.m in Sources */,
 				92EC2CEB198107FC001E7FBE /* VMViewController.m in Sources */,
+				6079D53B198128EB00A16118 /* UIDevice+Extensions.m in Sources */,
 				92EC2CE5198107FC001E7FBE /* VMAppDelegate.m in Sources */,
+				6079D53E198129DE00A16118 /* UIImage+SubimageExtraction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +310,10 @@
 				GCC_PREFIX_HEADER = "CrazyCat/CrazyCat-Prefix.pch";
 				INFOPLIST_FILE = "CrazyCat/CrazyCat-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CrazyCat/Library/WeiXin",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -282,6 +328,10 @@
 				GCC_PREFIX_HEADER = "CrazyCat/CrazyCat-Prefix.pch";
 				INFOPLIST_FILE = "CrazyCat/CrazyCat-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CrazyCat/Library/WeiXin",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -306,6 +356,7 @@
 				92EC2D05198107FC001E7FBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

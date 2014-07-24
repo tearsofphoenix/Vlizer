@@ -8,6 +8,7 @@
 
 #import "VMAppDelegate.h"
 #import "VMViewController.h"
+#import "WXApi.h"
 
 @interface VMAppDelegate ()
 
@@ -24,7 +25,10 @@
     [_window setRootViewController: _viewController];
     
     [_window makeKeyAndVisible];
-    // Override point for customization after application launch.
+
+    [WXApi registerApp: @"wx15547db3633ee619"
+       withDescription: @"好玩的数学游戏"];
+
     return YES;
 }
 							
