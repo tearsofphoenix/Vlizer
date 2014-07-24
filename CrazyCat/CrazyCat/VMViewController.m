@@ -15,6 +15,7 @@
 
 @interface VMViewController ()<UIWebViewDelegate>
 
+@property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @property (nonatomic, strong) UIWebView *webView;
 
@@ -26,7 +27,9 @@
 {
     [super viewDidLoad];
     
-    _webView = [[UIWebView alloc] initWithFrame: [[self view] bounds]];
+    CGRect bounds = [[self view] bounds];
+    
+    _webView = [[UIWebView alloc] initWithFrame: bounds];
     
     NSURL *URL = [[NSBundle mainBundle] URLForResource: @"launcher"
                                          withExtension: @"html"
@@ -34,6 +37,18 @@
     [_webView loadRequest: [NSURLRequest requestWithURL: URL]];
     [_webView setDelegate: self];
     [[self view] addSubview: _webView];
+    
+    
+    _imageView = [[UIImageView alloc] initWithFrame: bounds];
+    if ([UIDevice isiPhone5])
+    {
+        [_imageView setImage: [UIImage imageNamed: @"bg640x1136"]];
+    }else
+    {
+        [_imageView setImage: [UIImage imageNamed: @"bg640x960"]];
+    }
+    
+    [[self view] addSubview: _imageView];
 }
 
 - (BOOL)prefersStatusBarHidden
@@ -65,6 +80,10 @@
 
 - (void)webViewDidFinishLoad: (UIWebView *)webView
 {
+    [_imageView setAlpha: 0];
+    [_imageView removeFromSuperview];
+    [self setImageView: nil];
+    
     NSURL *URL = [[NSBundle mainBundle] URLForResource: @"background"
                                          withExtension: @"mp3"];
     NSError *error = nil;
@@ -140,7 +159,7 @@ shouldStartLoadWithRequest: (NSURLRequest *)request
             [_audioPlayer stop];
         }
         
-        NSLog(@"%@ %@ %@ %@", url, [url scheme], [url host], [url query]);
+//        NSLog(@"%@ %@ %@ %@", url, [url scheme], [url host], [url query]);
         
         return NO;
     }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FC48BCBC-8008-4810-99B7-CE4ED59E7D3B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CrazyCat</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E9391108-95BB-4DBB-8EB4-C9CE3041BE6A</key>
+		<string>https://github.com/tearsofphoenix/Vlizer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CrazyCat/CrazyCat.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E9391108-95BB-4DBB-8EB4-C9CE3041BE6A</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/tearsofphoenix/Vlizer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E9391108-95BB-4DBB-8EB4-C9CE3041BE6A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E9391108-95BB-4DBB-8EB4-C9CE3041BE6A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Vlizer</string>
+		</dict>
+	</array>
+</dict>
+</plist>
