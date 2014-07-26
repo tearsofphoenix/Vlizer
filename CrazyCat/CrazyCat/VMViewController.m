@@ -10,8 +10,12 @@
 #import "NSURL+Extensions.h"
 #import "UIDevice+Extensions.h"
 #import "UIImage+SubimageExtraction.h"
+#import "NSDictionary+Extensions.h"
 #import "WXApi.h"
+#import "AFNetworking.h"
 #import <AVFoundation/AVFoundation.h>
+
+static NSString * const kServerURL = @"http://jewery.info/crazycat/cat.php";
 
 @interface VMViewController ()<UIWebViewDelegate>
 
@@ -22,6 +26,56 @@
 @end
 
 @implementation VMViewController
+
++ (void)initialize
+{
+    NSString *key = @"com.veritas.application.ios.crazycat.record.device";
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *record = [defaults objectForKey: key];
+    
+    if (![record boolValue])
+    {
+        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+        UIDevice *device = [UIDevice currentDevice];
+        dict[@"device_id"] = [[device identifierForVendor] UUIDString];
+        dict[@"platform"] = [device platform];
+        
+        NSString *name = [device name];
+        dict[@"name"] = [name stringByReplacingOccurrencesOfString: @"'"
+                                                        withString: @""];
+        dict[@"model"] = [device model];
+        dict[@"system_version"] = [device systemVersion];
+        dict[@"system_name"] = [device systemName];
+        
+        dict[@"action"] = @"save_device";
+        
+        NSLog(@"%@", [kServerURL stringByAppendingString: [dict queryURLString]]);
+        
+        AFHTTPRequestOperation *operation = nil;
+        operation = [[AFHTTPRequestOperationManager manager] POST: kServerURL
+                                                       parameters: dict
+                                                          success: (^(AFHTTPRequestOperation *operation, id responseObject)
+                                                                    {
+                                                                        NSDictionary *obj = [NSJSONSerialization JSONObjectWithData: responseObject
+                                                                                                                            options: 0
+                                                                                                                              error: NULL];
+                                                                        if (obj && [obj[@"status"] integerValue] == 0)
+                                                                        {
+                                                                            [defaults setObject: @"YES"
+                                                                                         forKey: key];
+                                                                            [defaults synchronize];
+                                                                        }
+                                                                    })
+                                                          failure: (^(AFHTTPRequestOperation *operation, NSError *error)
+                                                                    {
+                                                                        NSLog(@"%@", [error localizedDescription]);
+                                                                    })];
+        AFHTTPResponseSerializer *s = [AFHTTPResponseSerializer serializer];
+        [s setAcceptableContentTypes: [NSSet setWithObject: @"text/html"]];
+        
+        [operation setResponseSerializer: s];
+    }
+}
 
 - (void)viewDidLoad
 {
@@ -71,7 +125,7 @@
     {
         [[_webView layer] renderInContext: (__bridge CGContextRef)(UIGraphicsGetImageFromCurrentImageContext())];
     }
-
+    
     UIImage *snapshotImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
@@ -102,7 +156,7 @@
     {
         NSLog(@"%@", [error localizedDescription]);
     }
-
+    
     [[AVAudioSession sharedInstance] setActive: YES
                                          error: &error];
     
@@ -110,7 +164,7 @@
     {
         NSLog(@"%@", [error localizedDescription]);
     }
-
+    
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     
     [_audioPlayer setVolume: 0.7];
@@ -138,7 +192,7 @@ shouldStartLoadWithRequest: (NSURLRequest *)request
             [message setThumbImage: thumbnail];
             
             WXImageObject *ext = [WXImageObject object];
-
+            
             ext.imageData = UIImageJPEGRepresentation(image, 1);
             
             message.mediaObject = ext;
@@ -157,9 +211,40 @@ shouldStartLoadWithRequest: (NSURLRequest *)request
         }else if ([type isEqualToString: @"end_game"])
         {
             [_audioPlayer stop];
+            
+            NSDictionary *dict = (@{
+                                    @"action" : @"save_record",
+                                    @"device_id" : [[[UIDevice currentDevice] identifierForVendor] UUIDString],
+                                    @"tap" : [args[@"tap"] description],
+                                    });
+            
+            NSLog(@"%@", [kServerURL stringByAppendingString: [dict queryURLString]]);
+            
+            AFHTTPRequestOperation *operation = nil;
+            operation = [[AFHTTPRequestOperationManager manager] POST: kServerURL
+                                                           parameters: dict
+                                                              success: (^(AFHTTPRequestOperation *operation, id responseObject)
+                                                                        {
+                                                                            NSDictionary *obj = [NSJSONSerialization JSONObjectWithData: responseObject
+                                                                                                                                options: 0
+                                                                                                                                  error: NULL];
+                                                                            if (obj && [obj[@"status"] integerValue] == 0)
+                                                                            {
+                                                                                NSLog(@"%@", obj);
+                                                                            }
+                                                                        })
+                                                              failure: (^(AFHTTPRequestOperation *operation, NSError *error)
+                                                                        {
+                                                                            NSLog(@"%@", [error localizedDescription]);
+                                                                        })];
+            
+            AFHTTPResponseSerializer *s = [AFHTTPResponseSerializer serializer];
+            [s setAcceptableContentTypes: [NSSet setWithObject: @"text/html"]];
+            
+            [operation setResponseSerializer: s];
         }
         
-//        NSLog(@"%@ %@ %@ %@", url, [url scheme], [url host], [url query]);
+        //        NSLog(@"%@ %@ %@ %@", url, [url scheme], [url host], [url query]);
         
         return NO;
     }

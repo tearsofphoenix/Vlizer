@@ -1119,12 +1119,13 @@ this.successPanel.parent&&this.removeChild(this.successPanel);this.failPanel.par
  this.map.unlock();this.isWin=0};a.prototype.onNodeClick=function(a){if(this.map.isExit(this.cat.node))this.showResult(!1);else if(this.map.lock(),a=this.map.findPath(this.cat.node),a.length){a=a[0];var c=this.map.coverPos2Point(a);this.cat.node=this.map.getNode(a);this.cat.run(c)}else this.showResult(!0)};a.prototype.onCatRun=function(a){this.map.unlock()};
 a.prototype.showResult=function(a){
  
- window.open("crazycat://action?arg=end_game");
+ window.open("crazycat://action?arg=end_game&tap=" + this.map.tap);
  
  a?(this.successPanel.x=(this.stageW-this.successPanel.width)/2,
                                       this.successPanel.y=(this.stageH-this.successPanel.height-this.morebtn.height)/2,
                                       this.successPanel.score(this.map.tap),
-                                      this.addChild(this.successPanel),this.isWin=1):(this.failPanel.x=(this.stageW-this.failPanel.width)/2,this.failPanel.y=(this.stageH-this.failPanel.height-this.morebtn.height)/2,this.successPanel.score(this.map.tap),this.addChild(this.failPanel),this.isWin=2);
+                                      this.addChild(this.successPanel),this.isWin=1)
+ :(this.failPanel.x=(this.stageW-this.failPanel.width)/2,this.failPanel.y=(this.stageH-this.failPanel.height-this.morebtn.height)/2,this.successPanel.score(this.map.tap),this.addChild(this.failPanel),this.isWin=2);
  /*this.addChild(this.morebtn)*/};
 a.prototype.createBitmapByName=function(a){var c=new egret.Bitmap;a=RES.getRes(a);c.texture=a;return c};return a}(egret.DisplayObjectContainer);c.GameContainer=e})(catgame||(catgame={}));
 var __extends=this.__extends||function(c,e){function d(){this.constructor=c}for(var a in e)e.hasOwnProperty(a)&&(c[a]=e[a]);d.prototype=e.prototype;c.prototype=new d},GameApp=function(c){function e(){c.call(this);this.addEventListener(egret.Event.ADDED_TO_STAGE,this.onAddToStage,this)}__extends(e,c);e.prototype.onAddToStage=function(c){this.loadingView=new LoadingUI;this.stage.addChild(this.loadingView);RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE,this.onConfigComplete,this);RES.loadConfig("resource/resource.json",
